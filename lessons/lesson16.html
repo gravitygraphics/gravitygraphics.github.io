@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv='cache-control' content='no-cache'>
+	<meta http-equiv='expires' content='0'>
+	<meta http-equiv='pragma' content='no-cache'>
+	<link href="../css/lessons.css" rel="stylesheet">
+
+	<script src="../js/lessons.js"></script>
+</head>
+
+<body>
+	<div id="lesson" class="lesson">
+		<h1>Lesson 16: Random Color</h1>
+
+		<p>We can also have the computer to pick a random color for us using the <b>random()</b> command, like this example below:</p>
+		<pre>dot(random(0,59), random(0,39), random(0,15))</pre>
+		<p>By specifying a range like (0,15), we are asking the computer to pick a color anywhere from 0 to 15 for us.</p>
+		<p>Click <b>RUN EXAMPLE CODE</b> multiple times to see the pixels change locations and colors!</p>
+
+		<div id="buttons">
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson15.html')">Lesson 15</button>
+			<button class="buttonNextLesson" onclick="NavigateTo('Lesson17.html')">Lesson 17</button>
+		</div>
+	</div>
+	<textarea id="LessonRunCode">
+
+</textarea>
+	<textarea id="LessonExampleCode">
+dot(random(0,59), random(0,39), random(0,15))
+dot(random(0,59), random(0,39), random(0,15))
+</textarea>
+	<script>
+		parent.ShowExample();
+		parent.LoadYourCode("TextAreaYourCode", "Lesson14");
+		parent.HideHelper();
+	</script>
+</body>
+
+</html>

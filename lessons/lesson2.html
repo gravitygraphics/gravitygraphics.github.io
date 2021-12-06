@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv='cache-control' content='no-cache'>
+	<meta http-equiv='expires' content='0'>
+	<meta http-equiv='pragma' content='no-cache'>
+	<link href="../css/lessons.css" rel="stylesheet">
+	<script src="../lib/JQuery/jquery-3.6.0.min.js"></script>
+	<script src="../js/lessons.js"></script>
+</head>
+
+<body>
+	<div id="lesson2" class="lesson">
+		<h1>Lesson 2: The Grid</h1>
+
+		<p>The screen is divided into a grid containing squares. </p>
+
+
+		<div id="buttons">
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson1.html')">Lesson 1</button>
+			<button class="buttonNextLesson" onclick="NavigateTo('Lesson3.html')">Lesson 3</button>
+		</div>
+	</div>
+	<textarea id="LessonRunCode">
+wait(0.05)
+var posX = 0;
+var posY = 0;
+function tick() {
+		
+	if (posX < 600) {
+		// draw thin line
+		gravitycontext.beginPath();
+		gravitycontext.moveTo(posX, 0);
+		gravitycontext.lineTo(posX, 400);
+		gravitycontext.strokeStyle = "#666";
+		gravitycontext.stroke();
+		
+		posX = posX + 10;
+	}
+	
+	if (posX == 600) {
+		if (posY < 400) {
+			gravitycontext.beginPath();
+			gravitycontext.moveTo(0, posY);
+			gravitycontext.lineTo(600, posY);
+			gravitycontext.strokeStyle = "#666";
+			gravitycontext.stroke();
+			posY = posY + 10;
+		}
+	}
+}
+</textarea>
+	<textarea id="LessonExampleCode">
+</textarea>
+
+	<script>
+		parent.LoadYourCode("TextAreaYourCode", "Lesson2");
+		parent.HideHelper();
+		parent.HideHelperButton();
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv='cache-control' content='no-cache'>
+	<meta http-equiv='expires' content='0'>
+	<meta http-equiv='pragma' content='no-cache'>
+	<link href="../css/lessons.css" rel="stylesheet">
+
+	<script src="../js/lessons.js"></script>
+</head>
+
+<body>
+	<div id="lesson" class="lesson">
+		<h1>Exercise 1:</h1>
+
+		<p>Draw a pixel in each corner of the screen.</p>
+
+		<div class="frame_image">
+			<img class="exercise_image" src="./imgs/e1.png">
+		</div>
+
+		<p>The example code is hidden in the green box below.</p>
+
+		<p>Click on the <b>SHOW EXAMPLE CODE</b> to reveal the solution.</p>
+
+		<div id="buttons">
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson9.html')">Lesson 9</button>
+			<button class="buttonNextLesson" onclick="NavigateTo('Exercise2.html')">Exercise 2</button>
+		</div>
+	</div>
+	<textarea id="LessonRunCode">
+
+</textarea>
+	<textarea id="LessonExampleCode">
+dot(x=0, y=0)
+dot(x=59, y=0)
+dot(x=0, y=39)
+dot(x=59, y=39)
+</textarea>
+	<script>
+		parent.LoadYourCode("TextAreaYourCode", "Exercise1");
+		parent.HideSolution();
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv='cache-control' content='no-cache'>
+	<meta http-equiv='expires' content='0'>
+	<meta http-equiv='pragma' content='no-cache'>
+	<link href="../css/lessons.css" rel="stylesheet">
+
+	<script src="../js/lessons.js"></script>
+</head>
+
+<body>
+	<div id="lesson" class="lesson">
+		<h1>Lesson 14: Optional Labels</h1>
+
+		<p>We can omit the labels such as: <b>x=</b>, <b>y=</b>, and <b>color=</b> if we want to.</p>
+
+		<p>Therefore, a line like this:</p>
+		<pre>dot(x=30, y=20, color="red")</pre>
+		<p>can also be written as:</p>
+		<pre>dot(30, 20, "red")</pre>
+
+		<div id="buttons">
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson13.html')">Lesson 13</button>
+			<button class="buttonNextLesson" onclick="NavigateTo('Exercise3.html')">Exercise 3</button>
+		</div>
+	</div>
+	<textarea id="LessonRunCode">
+
+</textarea>
+	<textarea id="LessonExampleCode">
+dot(30, 20, "red")
+</textarea>
+	<script>
+		parent.ShowExample()
+		parent.LoadYourCode("TextAreaYourCode", "Excercise3");
+		parent.HideHelper()
+	</script>
+</body>
+
+</html>
