@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv='cache-control' content='no-cache'>
+	<meta http-equiv='expires' content='0'>
+	<meta http-equiv='pragma' content='no-cache'>
+	<link href="../css/lessons.css" rel="stylesheet">
+
+	<script src="../js/lessons.js"></script>
+</head>
+
+<body>
+	<div id="lesson" class="lesson">
+		<h1>Lesson 7: Drawing Your First Pixel</h1>
+
+		<p>To plot your first pixel in the middle of the screen using code, simply type in
+		<pre>dot(x=30,y=20)</pre> in the blue box with the title <b>YOUR CODE</b></p>
+		<p>The example code is show in the green box below.</p>
+
+		<p>Type the code in the blue box to your left, and click <b>RUN YOUR CODE</b>.</p>
+
+		<div id="buttons">
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson6.html')">Lesson 6</button>
+			<button class="buttonNextLesson" onclick="NavigateTo('Lesson8.html')">Lesson 8</button>
+		</div>
+	</div>
+	<textarea id="LessonRunCode">
+
+</textarea>
+	<textarea id="LessonExampleCode">
+dot(x=30, y=20)
+</textarea>
+	<script>
+		parent.LoadYourCode("TextAreaYourCode", "Lesson7");
+		parent.HideHelper();
+	</script>
+</body>
+
+</html>

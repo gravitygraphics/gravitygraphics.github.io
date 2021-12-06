@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv='cache-control' content='no-cache'>
+	<meta http-equiv='expires' content='0'>
+	<meta http-equiv='pragma' content='no-cache'>
+	<link href="../css/lessons.css" rel="stylesheet">
+	<script src="../js/lessons.js"></script>
+</head>
+
+<body>
+	<div id="lesson" class="lesson">
+		<h1>Lesson 6: Pixel Coordinates</h1>
+
+		<p>A pixel on the screen is describe by a set of coordinates which is its location on the x and y axis.</p>
+		<p>To plot a pixel, you need to determine its x and y coordinates.</p>
+
+		<p><b>STEP 1:</b> Hover your mouse to where you want to draw your dot on the X axis and click on it.</p>
+
+		<p><b>STEP 2:</b> Hover your mouse to where you want to draw your dot on the Y axis and click on it.</p>
+
+		<div id="buttons">
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson5.html')">Lesson5</button>
+			<button class="buttonNextLesson" onclick="NavigateTo('Lesson7.html')">Lesson 7</button>
+		</div>
+	</div>
+	<textarea id="LessonRunCode">
+drawgrid();
+SetAllow(true, false);
+</textarea>
+	<textarea id="LessonExampleCode">
+
+</textarea>
+	<script>
+		parent.LoadYourCode("TextAreaYourCode", "Lesson6");
+		parent.ShowHelper();
+	</script>
+</body>
+
+</html>

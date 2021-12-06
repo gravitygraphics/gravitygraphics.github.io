@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv='cache-control' content='no-cache'>
+	<meta http-equiv='expires' content='0'>
+	<meta http-equiv='pragma' content='no-cache'>
+	<link href="../css/lessons.css" rel="stylesheet">
+	<script src="../js/lessons.js"></script>
+</head>
+
+<body>
+	<div id="lesson" class="lesson">
+		<h1>Lesson 5: The Helper and Axis</h1>
+
+		<p>The helper consist of the ruler and guide lines to help you locate where you are on the screen.</p>
+		<p>The blue horizontal ruler shows where you are on the x-axis.</p>
+		<p>The red vertical ruler shows where you are on the y-axis.</p>
+		<p>Hover your mouse over the screen to get the position on the x and y axis.</p>
+
+		<h3></h3>
+		<div id="buttons">
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson4.html')">Lesson 4</button>
+			<button class="buttonNextLesson" onclick="NavigateTo('Lesson6.html')">Lesson 6</button>
+		</div>
+	</div>
+	<textarea id="LessonRunCode">
+drawgrid();
+SetAllow(true, true);
+</textarea>
+	<textarea id="LessonExampleCode">
+
+</textarea>
+	<script>
+		parent.LoadYourCode("TextAreaYourCode", "Lesson5");
+		parent.ShowHelper();
+		parent.ShowHelperButton();
+	</script>
+</body>
+
+</html>

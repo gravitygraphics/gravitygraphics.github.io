@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv='cache-control' content='no-cache'>
+	<meta http-equiv='expires' content='0'>
+	<meta http-equiv='pragma' content='no-cache'>
+	<link href="../css/lessons.css" rel="stylesheet">
+
+	<script src="../js/lessons.js"></script>
+</head>
+
+<body>
+	<div id="lesson" class="lesson">
+		<h1>Lesson 17: Fixed X Random Y</h1>
+
+		<p>Now let's try to put a fixed value to X but randomize Y like the code below.</p>
+		<pre>dot(10, random(0,39), random(0,15))</pre>
+		<p>Run the example code to see what will happen.</p>
+
+
+		<div id="buttons">
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson16.html')">Lesson 16</button>
+			<button class="buttonNextLesson" onclick="NavigateTo('Lesson18.html')">Lesson 18</button>
+		</div>
+	</div>
+	<textarea id="LessonRunCode">
+
+</textarea>
+	<textarea id="LessonExampleCode">
+dot(10, random(0,39), random(0,15))
+dot(10, random(0,39), random(0,15))
+</textarea>
+	<script>
+		parent.ShowExample();
+		parent.LoadYourCode("TextAreaYourCode", "Lesson14");
+		parent.HideHelper();
+	</script>
+</body>
+
+</html>

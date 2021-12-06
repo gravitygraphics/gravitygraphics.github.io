@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv='cache-control' content='no-cache'>
+	<meta http-equiv='expires' content='0'>
+	<meta http-equiv='pragma' content='no-cache'>
+	<link href="../css/lessons.css" rel="stylesheet">
+
+	<script src="../js/lessons.js"></script>
+</head>
+
+<body>
+	<div id="lesson" class="lesson">
+		<h1>Lesson 13: Using Color Names</h1>
+
+		<p>Try changing the color of the dot in your code. In this example, we changed it to "red".</p>
+		<pre>dot(x=30, y=20, color="red")</pre>
+		<p>Color names have to be in "quotes".</p>
+
+		<div class="frame_image">
+			<img class="colornames" src="./imgs/colornames2.png">
+		</div>
+
+
+
+		<div id="buttons">
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson12.html')">Lesson 12</button>
+			<button class="buttonNextLesson" onclick="NavigateTo('Lesson14.html')">Lesson 14</button>
+		</div>
+	</div>
+	<textarea id="LessonRunCode">
+
+</textarea>
+	<textarea id="LessonExampleCode">
+dot(x=30, y=20, color="red")
+</textarea>
+	<script>
+		parent.LoadYourCode("TextAreaYourCode", "Lesson13");
+		parent.HideHelper();
+	</script>
+</body>
+
+</html>

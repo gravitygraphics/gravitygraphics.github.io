@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv='cache-control' content='no-cache'>
+	<meta http-equiv='expires' content='0'>
+	<meta http-equiv='pragma' content='no-cache'>
+	<link href="../css/lessons.css" rel="stylesheet">
+
+	<script src="../js/lessons.js"></script>
+</head>
+
+<body>
+	<div id="lesson" class="lesson">
+		<h1>Lesson 11: Changing the Color of your Pixel</h1>
+
+		<p>You can change the color of your dot by entering a value for the color after your coordinates.</p>
+		<pre>dot(x=30, y=20, color=1)</pre>
+		<p>Below is a color chart you can refer to.</p>
+
+		<div class="frame_image">
+			<img class="colortable" src="./imgs/colors16.png">
+		</div>
+
+		<div id="buttons">
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson10.html')">Lesson 10</button>
+			<button class="buttonNextLesson" onclick="NavigateTo('Lesson12.html')">Lesson 12</button>
+		</div>
+	</div>
+	<textarea id="LessonRunCode">
+
+</textarea>
+	<textarea id="LessonExampleCode">
+dot(x=30, y=20, color=1)
+</textarea>
+	<script>
+		parent.LoadYourCode("TextAreaYourCode", "Lesson11");
+		parent.HideHelper();
+	</script>
+</body>
+
+</html>
