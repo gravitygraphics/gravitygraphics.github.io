@@ -24,15 +24,18 @@
 		</div>
 	</div>
 	<textarea id="LessonRunCode">
-drawgrid();
-wait(1)
-function tick() {
+gr();
+while(true) {
 	clear();
 	drawgrid();
+
 	dot(random(0,59), random(0,39));
+	await delay(1);
 }
+
 </textarea>
 	<textarea id="LessonExampleCode">
+
 </textarea>
 	<script>
 		parent.LoadYourCode("TextAreaYourCode", "Lesson3");

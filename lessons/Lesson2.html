@@ -24,35 +24,72 @@
 		</div>
 	</div>
 	<textarea id="LessonRunCode">
-wait(0.05)
+gr();
 var posX = 0;
 var posY = 0;
-function tick() {
+for (var i=0; i<100; i++) {
 		
 	if (posX < 600) {
 		// draw thin line
-		gravitycontext.beginPath();
-		gravitycontext.moveTo(posX, 0);
-		gravitycontext.lineTo(posX, 400);
-		gravitycontext.strokeStyle = "#666";
-		gravitycontext.stroke();
+		gravitygraphicscontext.beginPath();
+		gravitygraphicscontext.moveTo(posX, 0);
+		gravitygraphicscontext.lineTo(posX, 400);
+		gravitygraphicscontext.strokeStyle = "#666";
+		gravitygraphicscontext.stroke();
 		
 		posX = posX + 10;
 	}
 	
 	if (posX == 600) {
 		if (posY < 400) {
-			gravitycontext.beginPath();
-			gravitycontext.moveTo(0, posY);
-			gravitycontext.lineTo(600, posY);
-			gravitycontext.strokeStyle = "#666";
-			gravitycontext.stroke();
+			gravitygraphicscontext.beginPath();
+			gravitygraphicscontext.moveTo(0, posY);
+			gravitygraphicscontext.lineTo(600, posY);
+			gravitygraphicscontext.strokeStyle = "#666";
+			gravitygraphicscontext.stroke();
+			posY = posY + 10;
+		}
+	}
+	
+	refresh();
+	await delay(0.03);
+}
+
+
+/* 
+var posX = 0;
+var posY = 0;
+
+wait(0.03);
+		
+function tick() {
+	if (posX < 600) {
+		// draw thin line
+		gravitygraphicscontext.beginPath();
+		gravitygraphicscontext.moveTo(posX, 0);
+		gravitygraphicscontext.lineTo(posX, 400);
+		gravitygraphicscontext.strokeStyle = "#666";
+		gravitygraphicscontext.stroke();
+		
+		posX = posX + 10;
+	}
+	
+	if (posX == 600) {
+		if (posY < 400) {
+			gravitygraphicscontext.beginPath();
+			gravitygraphicscontext.moveTo(0, posY);
+			gravitygraphicscontext.lineTo(600, posY);
+			gravitygraphicscontext.strokeStyle = "#666";
+			gravitygraphicscontext.stroke();
 			posY = posY + 10;
 		}
 	}
 }
+*/
 </textarea>
 	<textarea id="LessonExampleCode">
+drawgrid()
+input ("test")
 </textarea>
 
 	<script>

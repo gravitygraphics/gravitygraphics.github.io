@@ -7,40 +7,38 @@
 	<meta http-equiv='expires' content='0'>
 	<meta http-equiv='pragma' content='no-cache'>
 	<link href="../css/lessons.css" rel="stylesheet">
-
+	<script src="../lib/JQuery/jquery-3.6.0.min.js"></script>
 	<script src="../js/lessons.js"></script>
 </head>
 
 <body>
-	<div id="lesson" class="lesson">
-		<h1>Lesson 19: For Loop</h1>
+	<div id="lesson1" class="lesson">
+		<h1>Lesson 19: Print a Character</h1>
 
-		<p>To plot an extra dot, we just need to add in an extra line of code. But what if we want to plot 200 pixels? It would be a lot of work to add in 200 lines of code.</p>
-		<p>Here's where the for loop can make our work a lot easier.</p>
-		<pre>for (count=0; count < 200; count=count+1) {
-    dot(random(0,59), random(0,39), random(0,15))
-}
-</pre>
-		<p>We just put our code into the for loop and have the for loop repeat our code 200 times.</p>
+		<p>We can also print a character on the screen using the print statement.</p>
+		<p>To print a single letter or character <b>H</b>, we simply type in the code below:</p>
+		<pre>print ("H")</pre>
+		<p>A character can be anything from an alphabet; a number; a symbol; or even a space.</p>
 
-
+		<h3></h3>
 		<div id="buttons">
 			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson18.html')">Lesson 18</button>
-			<!--button class="buttonNextLesson" onclick="NavigateTo('Lesson20.html')">Lesson 20</button-->
+			<button class="buttonNextLesson" onclick="NavigateTo('Lesson20.html')">Lesson 20</button>
 		</div>
 	</div>
-	<textarea id="LessonRunCode">
 
+	<textarea id="LessonRunCode">
+tr()
+printchar ("H")
 </textarea>
 	<textarea id="LessonExampleCode">
-for (count=0; count < 200; count=count+1) {
-    dot(random(0,59), random(0,39), random(0,15))
-}
+print ("H")
 </textarea>
 	<script>
 		parent.ShowExample();
-		parent.LoadYourCode("TextAreaYourCode", "Lesson14");
+		parent.LoadYourCode("TextAreaYourCode", "Lesson1");
 		parent.HideHelper();
+		parent.HideHelperButton();
 	</script>
 </body>
 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv='cache-control' content='no-cache'>
+	<meta http-equiv='expires' content='0'>
+	<meta http-equiv='pragma' content='no-cache'>
+	<link href="../css/lessons.css" rel="stylesheet">
+	<script src="../lib/JQuery/jquery-3.6.0.min.js"></script>
+	<script src="../js/lessons.js"></script>
+</head>
+
+<body>
+	<div id="lesson" class="lesson">
+		<h1>Lesson 22: Variables</h1>
+
+		<p>A variable is something you can store values in, such as a string.</p>
+		<p>Let's create a variable called <b>name</b> and insert a name into the variable like this:</p>
+		<pre>var name = "Moles"</pre>
+		<p>Now we add the variable into our "Hello" string by typing:</p>
+		<pre>print ("Hello " + name)</pre>
+		<p>Note that the variable <b>name</b> is not in quotes <b>""</b>.</p>
+
+		<h3></h3>
+		<div id="buttons">
+			<button class="buttonPreviousLesson" onclick="NavigateTo('lesson21.html');">Lesson 21</button>
+			<button class="buttonNextLesson" onclick="NavigateTo('Exercise4.html')">Exercise 4</button>
+		</div>
+	</div>
+
+	<textarea id="LessonRunCode">
+tr()
+print ("Hello Moles")
+</textarea>
+	<textarea id="LessonExampleCode">
+var name = "Moles"
+print ("Hello " + name)
+</textarea>
+	<script>
+		parent.ShowExample();
+		parent.LoadYourCode("TextAreaYourCode", "Lesson1");
+		parent.HideHelper();
+		parent.HideHelperButton();
+	</script>
+</body>
+
+</html>

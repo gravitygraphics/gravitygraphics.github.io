@@ -27,11 +27,11 @@
 		</div>
 	</div>
 	<textarea id="LessonRunCode">
+gr();
 drawgrid();
-wait(0.05)
 var posX = 0;
 var posY = 0;
-function tick() {
+while(posY < 40) {
 		
 	if (posX < 60) {
 		clear();	
@@ -59,6 +59,8 @@ function tick() {
 			posY = posY + 1;
 		}
 	}
+	
+	await delay(0.05);
 }
 </textarea>
 	<textarea id="LessonExampleCode">
