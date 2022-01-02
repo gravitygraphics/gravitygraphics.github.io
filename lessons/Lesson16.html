@@ -13,15 +13,16 @@
 
 <body>
 	<div id="lesson" class="lesson">
-		<h1>Lesson 16: Random Color</h1>
+		<h1>Lesson 16: Random Number</h1>
 
-		<p>We can also have the computer to pick a random color for us using the <b>random()</b> command, like this example below:</p>
-		<pre>dot(random(0,59), random(0,39), random(0,15))</pre>
-		<p>By specifying a range like (0,15), we are asking the computer to pick a color anywhere from 0 to 15 for us.</p>
-		<p>Click <b>RUN EXAMPLE CODE</b> multiple times to see the pixels change locations and colors!</p>
+		<p>Instead of picking a random position for our dot ourselves, we can also have the computer do it for us.</p>
+		<p>For that, we use the command <b>random()</b> in place of our x and y position values, like this:</p>
+		<pre>dot(random(0,59), random(0,39), "lime")</pre>
+		<p>When we specify a range like (0,59), we are asking the computer to pick a number anywhere from 0 to 59 for us.</p>
+		<p>Click <b>RUN EXAMPLE CODE</b> multiple times to see the pixels change locations.</p>
 
 		<div id="buttons">
-			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson15.html')">Lesson 15</button>
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Exercise3.html')">Exercise 3</button>
 			<button class="buttonNextLesson" onclick="NavigateTo('Lesson17.html')">Lesson 17</button>
 		</div>
 	</div>
@@ -29,8 +30,9 @@
 gr()
 </textarea>
 	<textarea id="LessonExampleCode">
-dot(random(0,59), random(0,39), random(0,15))
-dot(random(0,59), random(0,39), random(0,15))
+gr()
+dot(random(0,59), random(0,39), "lime")
+dot(random(0,59), random(0,39), "lime")
 </textarea>
 	<script>
 		parent.ShowExample();

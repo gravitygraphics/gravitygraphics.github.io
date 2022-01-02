@@ -12,14 +12,11 @@
 </head>
 
 <body>
-	<div id="lesson1" class="lesson">
-		<h1>Lesson 21: Joining Strings</h1>
+	<div id="lesson" class="lesson">
+		<h1>Lesson 21: Centering the Text</h1>
 
-		<p>You can also join strings together.</p>
-		<p>Here we are joining the string "Hello" with "World" to get "Hello World"</p>
-		<pre>print ("Hello" + " " + "World")</pre>
-		<p>The result would be the same as printing it as a whole string:</p>
-		<pre>print ("Hello World")</pre>
+		<p>You can center the text on the screen by typing in:</p>
+		<pre>text("Hello", x="center", y="center")</pre>
 
 		<h3></h3>
 		<div id="buttons">
@@ -29,12 +26,12 @@
 	</div>
 
 	<textarea id="LessonRunCode">
-tr()
-print ("Hello World")
+gr()
 </textarea>
 	<textarea id="LessonExampleCode">
-print ("Hello" + " " + "World")
-print ("Hello World")
+gr()
+text("Hello", x="center", y="center")
+
 </textarea>
 	<script>
 		parent.ShowExample();

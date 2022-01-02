@@ -7,20 +7,17 @@
 	<meta http-equiv='expires' content='0'>
 	<meta http-equiv='pragma' content='no-cache'>
 	<link href="../css/lessons.css" rel="stylesheet">
+
 	<script src="../js/lessons.js"></script>
 </head>
 
 <body>
 	<div id="lesson" class="lesson">
-		<h1>Lesson 4: Number of Pixels</h1>
+		<h1>Lesson 4: Pixels</h1>
 
-		<p>There are 60 pixels across the screen</p>
-		<p>and 40 pixels from top to bottom.</p>
-		<p>They range from 0 to 59 horizontally,</p>
-		<p>and 0 to 39 vertically.</p>
+		<p>Each square on the grid is called a pixel.</p>
 
 
-		<h3></h3>
 		<div id="buttons">
 			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson3.html')">Lesson 3</button>
 			<button class="buttonNextLesson" onclick="NavigateTo('Lesson5.html')">Lesson 5</button>
@@ -28,46 +25,21 @@
 	</div>
 	<textarea id="LessonRunCode">
 gr();
-drawgrid();
-var posX = 0;
-var posY = 0;
-while(posY < 40) {
-		
-	if (posX < 60) {
-		clear();	
-		drawgrid();
-		dot(0 , 0, "lime");
-		word(0, 2, 4, "red", "left", "25px Arial");
-		
-		dot(posX , 0, "lime");
-		word(posX, posX-2, 4, "red", "left", "25px Arial");
-		posX = posX + 1;
-	}
-	
-	if (posX == 60) {
-		if (posY < 40) {
-			clear();
-			drawgrid();
-			dot(0 , 0, "lime");
-			word(0, 2, 4, "red", "left", "25px Arial");
-			
-			dot(59, 0, "lime");
-			word("59", 59-2, 4, "red", "left", "25px Arial");
-			
-			dot(0, posY, "lime");
-			word(posY, 2, posY, "red", "left", "25px Arial");
-			posY = posY + 1;
-		}
-	}
-	
-	await delay(0.05);
+hidecursor();
+while(true) {
+	clear();
+	drawgrid();
+
+	dot(random(0,59), random(0,35));
+	await delay(1);
 }
+
 </textarea>
 	<textarea id="LessonExampleCode">
 
 </textarea>
 	<script>
-		parent.LoadYourCode("TextAreaYourCode", "Lesson4");
+		parent.LoadYourCode("TextAreaYourCode", "Lesson3");
 		parent.HideHelper();
 		parent.HideHelperButton();
 	</script>

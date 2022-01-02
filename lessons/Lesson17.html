@@ -13,12 +13,12 @@
 
 <body>
 	<div id="lesson" class="lesson">
-		<h1>Lesson 17: Fixed X Random Y</h1>
+		<h1>Lesson 17: Random Color</h1>
 
-		<p>Now let's try to put a fixed value to X but randomize Y like the code below.</p>
-		<pre>dot(10, random(0,39), random(0,15))</pre>
-		<p>Run the example code to see what will happen.</p>
-
+		<p>We can also have the computer to pick a random color for us using the <b>random()</b> command, like this example below:</p>
+		<pre>dot(random(0,59), random(0,39), random(0,15))</pre>
+		<p>By specifying a range like (0,15), we are asking the computer to pick a color anywhere from 0 to 15 for us.</p>
+		<p>Click <b>RUN EXAMPLE CODE</b> multiple times to see the pixels change locations and colors!</p>
 
 		<div id="buttons">
 			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson16.html')">Lesson 16</button>
@@ -29,8 +29,9 @@
 gr()
 </textarea>
 	<textarea id="LessonExampleCode">
-dot(10, random(0,39), random(0,15))
-dot(10, random(0,39), random(0,15))
+gr()
+dot(random(0,59), random(0,39), random(0,15))
+dot(random(0,59), random(0,39), random(0,15))
 </textarea>
 	<script>
 		parent.ShowExample();

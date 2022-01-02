@@ -15,19 +15,19 @@
 	<div id="lesson" class="lesson">
 		<h1>Exercise 4:</h1>
 
-		<p>Trying changing the value "Moles" in the variable <b>name</b> to your name, and see the result.</p>
+		<p>Following the code from Lesson 23, change the color of the text "Hello" to a random color.</p>
 
 		<div id="buttons">
-			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson22.html')">Lesson 22</button>
-			<button class="buttonNextLesson" onclick="NavigateTo('Lesson23.html')">Lesson 23</button>
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson23.html')">Lesson 23</button>
+			<button class="buttonNextLesson" onclick="NavigateTo('Exercise5.html')">Exercise 5</button>
 		</div>
 	</div>
 	<textarea id="LessonRunCode">
-
+gr()
 </textarea>
 	<textarea id="LessonExampleCode">
-var name = "Moles"
-print ("Hello " + name)
+gr()
+text("Hello", x="center", y="center", color=random(1,15), fontsize=26)
 </textarea>
 	<script>
 		parent.LoadYourCode("TextAreaYourCode", "Excercise3");

@@ -13,15 +13,17 @@
 
 <body>
 	<div id="lesson1" class="lesson">
-		<h1>Lesson 20: Placing Text on the Graphics Screen</h1>
+		<h1>Lesson 25: Joining Strings</h1>
 
-		<p>We can also put text on the graphics screen by using the command:</p>
-		<pre>text("Hello World")</pre>
+		<p>You can also join strings together like the string "Hello" with the string "Moles" to get the string "Hello Moles"</p>
+		<pre>print ("Hello" + " " + "Moles")</pre>
+		<p>The result would be the same as printing it as a whole string:</p>
+		<pre>print ("Hello Moles")</pre>
 
 		<h3></h3>
 		<div id="buttons">
-			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson19.html')">Lesson 19</button>
-			<button class="buttonNextLesson" onclick="NavigateTo('Lesson21.html')">Lesson 21</button>
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson24.html')">Lesson 24</button>
+			<button class="buttonNextLesson" onclick="NavigateTo('Exercise6.html')">Exercise 6</button>
 		</div>
 	</div>
 
@@ -30,8 +32,8 @@ gr()
 </textarea>
 	<textarea id="LessonExampleCode">
 gr()
-text("Hello", x= 0, y=0)
-
+print ("Hello" + " " + "Moles")
+print ("Hello Moles")
 </textarea>
 	<script>
 		parent.ShowExample();

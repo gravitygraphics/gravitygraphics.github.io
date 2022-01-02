@@ -7,35 +7,36 @@
 	<meta http-equiv='expires' content='0'>
 	<meta http-equiv='pragma' content='no-cache'>
 	<link href="../css/lessons.css" rel="stylesheet">
-
 	<script src="../js/lessons.js"></script>
 </head>
 
 <body>
 	<div id="lesson" class="lesson">
-		<h1>Lesson 7: Drawing Your First Pixel</h1>
+		<h1>Lesson 7: Pixel Coordinates</h1>
 
-		<p>To plot your first pixel in the middle of the screen using code, simply type in
-		<pre>dot(x=30,y=20)</pre> in the blue box with the title <b>YOUR CODE</b></p>
-		<p>The example code is show in the green box below.</p>
+		<p>A pixel on the screen is describe by a set of coordinates which is its location on the x and y axis.</p>
+		<p>To plot a pixel, you need to determine its x and y coordinates.</p>
 
-		<p>Type the code in the blue box to your left, and click <b>RUN YOUR CODE</b>.</p>
+		<p><b>STEP 1:</b> Hover your mouse to where you want to draw your dot on the X axis and click on it.</p>
+
+		<p><b>STEP 2:</b> Hover your mouse to where you want to draw your dot on the Y axis and click on it.</p>
 
 		<div id="buttons">
-			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson6.html')">Lesson 6</button>
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson6.html')">Lesson6</button>
 			<button class="buttonNextLesson" onclick="NavigateTo('Lesson8.html')">Lesson 8</button>
 		</div>
 	</div>
 	<textarea id="LessonRunCode">
-gr()
+gr();
+drawgrid();
+SetAllow(true, false);
 </textarea>
 	<textarea id="LessonExampleCode">
-dot(x=30, y=20)
+
 </textarea>
 	<script>
-		parent.ShowExample();
-		parent.LoadYourCode("TextAreaYourCode", "Lesson7");
-		parent.HideHelper();
+		parent.LoadYourCode("TextAreaYourCode", "Lesson6");
+		parent.ShowHelper();
 	</script>
 </body>
 

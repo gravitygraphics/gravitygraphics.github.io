@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv='cache-control' content='no-cache'>
+	<meta http-equiv='expires' content='0'>
+	<meta http-equiv='pragma' content='no-cache'>
+	<link href="../css/lessons.css" rel="stylesheet">
+	<script src="../lib/JQuery/jquery-3.6.0.min.js"></script>
+	<script src="../js/lessons.js"></script>
+</head>
+
+<body>
+	<div id="lesson" class="lesson">
+		<h1>Lesson 27: The Use of Variables</h1>
+
+		<p>One of the purpose of using variables, is that we don't have to change the content in our code multiple times.</p>
+		<p>Instead of inserting our names multiple times like in Exercise 6, we can just change the variable name in the example code below just once, and we can observe all the names in our code has changed.</p>
+		<p>Try changing the string "Moles" in the variable name. Run the example code and see the result.</p>
+
+		<h3></h3>
+		<div id="buttons">
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson26.html');">Lesson 26</button>
+			<button class="buttonNextLesson" onclick="NavigateTo('Lesson28.html')">Lesson 28</button>
+		</div>
+	</div>
+
+	<textarea id="LessonRunCode">
+gr()
+</textarea>
+	<textarea id="LessonExampleCode">
+gr()
+var name = "Moles"
+text("Hello " + name, x="center", y="center", color=random(1,15), fontsize=26)
+dot(random(0,59), random(0,35), random(1,15))
+dot(random(0,59), random(0,35), random(1,15))
+print("What would you like me to do, " + name + "?")
+print(name + ", I am good at making coffee.")
+</textarea>
+	<script>
+		parent.ShowExample();
+		parent.LoadYourCode("TextAreaYourCode", "Lesson1");
+		parent.HideHelper();
+		parent.HideHelperButton();
+	</script>
+</body>
+
+</html>

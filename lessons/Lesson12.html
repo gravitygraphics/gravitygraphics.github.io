@@ -13,10 +13,15 @@
 
 <body>
 	<div id="lesson" class="lesson">
-		<h1>Lesson 12: Color Names</h1>
+		<h1>Lesson 12: Changing the Color of your Pixel</h1>
 
-		<p>You can also change the color of your dot by specifying the name of the color you want.</p>
-		<p>On the screen are the names of some colors.</p>
+		<p>You can change the color of your dot by entering a value for the color after your coordinates.</p>
+		<pre>dot(x=30, y=20, color=1)</pre>
+		<p>Below is a color chart you can refer to.</p>
+
+		<div class="frame_image">
+			<img class="colortable" src="./imgs/colors16.png">
+		</div>
 
 		<div id="buttons">
 			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson11.html')">Lesson 11</button>
@@ -25,13 +30,13 @@
 	</div>
 	<textarea id="LessonRunCode">
 gr()
-displayColorNames()
 </textarea>
 	<textarea id="LessonExampleCode">
-
+gr()
+dot(x=30, y=20, color=1)
 </textarea>
 	<script>
-		parent.LoadYourCode("TextAreaYourCode", "Lesson12");
+		parent.LoadYourCode("TextAreaYourCode", "Lesson11");
 		parent.HideHelper();
 	</script>
 </body>

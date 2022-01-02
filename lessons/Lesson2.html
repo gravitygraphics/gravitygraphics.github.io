@@ -13,9 +13,12 @@
 
 <body>
 	<div id="lesson2" class="lesson">
-		<h1>Lesson 2: The Grid</h1>
+		<h1>Lesson 2: Graphics Mode</h1>
 
-		<p>The screen is divided into a grid containing squares. </p>
+		<p>To draw something on the screen we need to go into graphics mode. To do that, we simply type in:</p>
+		<pre>gr()</pre>
+		<p>In this graphics mode, the screen is divided into a graphical portion and a text portion that displays the contents of the terminal.</p>
+		<p>If you print <b>"Hello World"</b> it will start at the bottom, right below the graphical screen.</p>
 
 
 		<div id="buttons">
@@ -25,37 +28,7 @@
 	</div>
 	<textarea id="LessonRunCode">
 gr();
-var posX = 0;
-var posY = 0;
-for (var i=0; i<100; i++) {
-		
-	if (posX < 600) {
-		// draw thin line
-		gravitygraphicscontext.beginPath();
-		gravitygraphicscontext.moveTo(posX, 0);
-		gravitygraphicscontext.lineTo(posX, 400);
-		gravitygraphicscontext.strokeStyle = "#666";
-		gravitygraphicscontext.stroke();
-		
-		posX = posX + 10;
-	}
-	
-	if (posX == 600) {
-		if (posY < 400) {
-			gravitygraphicscontext.beginPath();
-			gravitygraphicscontext.moveTo(0, posY);
-			gravitygraphicscontext.lineTo(600, posY);
-			gravitygraphicscontext.strokeStyle = "#666";
-			gravitygraphicscontext.stroke();
-			posY = posY + 10;
-		}
-	}
-	
-	refresh();
-	await delay(0.03);
-}
-
-
+print ("Hello World")
 /* 
 var posX = 0;
 var posY = 0;
@@ -88,8 +61,8 @@ function tick() {
 */
 </textarea>
 	<textarea id="LessonExampleCode">
-drawgrid()
-input ("test")
+gr()
+print("Hello World")
 </textarea>
 
 	<script>

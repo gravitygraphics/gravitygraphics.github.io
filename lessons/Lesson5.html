@@ -12,12 +12,16 @@
 
 <body>
 	<div id="lesson" class="lesson">
-		<h1>Lesson 5: The Helper and Axis</h1>
+		<h1>Lesson 5: Number of Pixels</h1>
 
-		<p>The helper consist of the ruler and guide lines to help you locate where you are on the screen.</p>
-		<p>The blue horizontal ruler shows where you are on the x-axis.</p>
-		<p>The red vertical ruler shows where you are on the y-axis.</p>
-		<p>Hover your mouse over the screen to get the position on the x and y axis.</p>
+		<p>There are 60 pixels across the screen</p>
+		<p>and 36 pixels from top to bottom.</p>
+		<p>They range from 0 to 59 horizontally,</p>
+		<p>and 0 to 35 vertically.</p>
+		<p>In the text area at the bottom,</p>
+		<p>there is a total of 4 rows in height</p>
+		<p>and 50 columns in width.</p>
+
 
 		<h3></h3>
 		<div id="buttons">
@@ -28,15 +32,52 @@
 	<textarea id="LessonRunCode">
 gr();
 drawgrid();
-SetAllow(true, true);
+var posX = 0;
+var posY = 0;
+while(posY < 36) {
+		
+	if (posX < 60) {
+		clear();	
+		drawgrid();
+		dot(0 , 0, "lime");
+		word(0, 2, 4, "red", "left", "25px Arial");
+		
+		dot(posX , 0, "lime");
+		word(posX, posX-2, 4, "red", "left", "25px Arial");
+		posX = posX + 1;
+	}
+	
+	if (posX == 60) {
+		if (posY < 36) {
+			clear();
+			drawgrid();
+			dot(0 , 0, "lime");
+			word(0, 2, 4, "red", "left", "25px Arial");
+			
+			dot(59, 0, "lime");
+			word("59", 59-2, 4, "red", "left", "25px Arial");
+			
+			dot(0, posY, "lime");
+			word(posY, 2, posY, "red", "left", "25px Arial");
+			posY = posY + 1;
+		}
+	}
+	
+	await delay(0.05);
+}
+
+print ("1:")
+print ("2:")
+print ("3:")
+input ("4:")
 </textarea>
 	<textarea id="LessonExampleCode">
 
 </textarea>
 	<script>
-		parent.LoadYourCode("TextAreaYourCode", "Lesson5");
-		parent.ShowHelper();
-		parent.ShowHelperButton();
+		parent.LoadYourCode("TextAreaYourCode", "Lesson4");
+		parent.HideHelper();
+		parent.HideHelperButton();
 	</script>
 </body>
 

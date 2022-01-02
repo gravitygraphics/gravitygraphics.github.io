@@ -7,38 +7,36 @@
 	<meta http-equiv='expires' content='0'>
 	<meta http-equiv='pragma' content='no-cache'>
 	<link href="../css/lessons.css" rel="stylesheet">
-	<script src="../lib/JQuery/jquery-3.6.0.min.js"></script>
+
 	<script src="../js/lessons.js"></script>
 </head>
 
 <body>
-	<div id="lesson1" class="lesson">
-		<h1>Lesson 19: Print a Character</h1>
+	<div id="lesson" class="lesson">
+		<h1>Lesson 19: Fixed Y Random X</h1>
 
-		<p>We can also print a character on the screen using the print statement.</p>
-		<p>To print a single letter or character <b>H</b>, we simply type in the code below:</p>
-		<pre>print ("H")</pre>
-		<p>A character can be anything from an alphabet; a number; a symbol; or even a space.</p>
+		<p>Now let's switch it up and put a fixed value to Y but randomize X.</p>
+		<pre>dot(10, random(0,39), random(0,15))</pre>
+		<p>Run the example code and let us see what will happen.</p>
 
-		<h3></h3>
+
 		<div id="buttons">
 			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson18.html')">Lesson 18</button>
 			<button class="buttonNextLesson" onclick="NavigateTo('Lesson20.html')">Lesson 20</button>
 		</div>
 	</div>
-
 	<textarea id="LessonRunCode">
-tr()
-printchar ("H")
+gr()
 </textarea>
 	<textarea id="LessonExampleCode">
-print ("H")
+gr()
+dot(random(0,59), 25, random(0,15))
+dot(random(0,59), 25, random(0,15))
 </textarea>
 	<script>
 		parent.ShowExample();
-		parent.LoadYourCode("TextAreaYourCode", "Lesson1");
+		parent.LoadYourCode("TextAreaYourCode", "Lesson14");
 		parent.HideHelper();
-		parent.HideHelperButton();
 	</script>
 </body>
 

@@ -13,30 +13,33 @@
 
 <body>
 	<div id="lesson" class="lesson">
-		<h1>Lesson 14: Optional Labels</h1>
+		<h1>Lesson 14: Using Color Names</h1>
 
-		<p>We can omit the labels such as: <b>x=</b>, <b>y=</b>, and <b>color=</b> if we want to.</p>
-
-		<p>Therefore, a line like this:</p>
+		<p>Try changing the color of the dot in your code. In this example, we changed it to "red".</p>
 		<pre>dot(x=30, y=20, color="red")</pre>
-		<p>can also be written as:</p>
-		<pre>dot(30, 20, "red")</pre>
+		<p>Color names have to be in "quotes".</p>
+
+		<div class="frame_image">
+			<img class="colornames" src="./imgs/colornames2.png">
+		</div>
+
+
 
 		<div id="buttons">
 			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson13.html')">Lesson 13</button>
-			<button class="buttonNextLesson" onclick="NavigateTo('Exercise3.html')">Exercise 3</button>
+			<button class="buttonNextLesson" onclick="NavigateTo('Lesson15.html')">Lesson 15</button>
 		</div>
 	</div>
 	<textarea id="LessonRunCode">
 gr()
 </textarea>
 	<textarea id="LessonExampleCode">
-dot(30, 20, "red")
+gr()
+dot(x=30, y=20, color="red")
 </textarea>
 	<script>
-		parent.ShowExample()
-		parent.LoadYourCode("TextAreaYourCode", "Excercise3");
-		parent.HideHelper()
+		parent.LoadYourCode("TextAreaYourCode", "Lesson13");
+		parent.HideHelper();
 	</script>
 </body>
 

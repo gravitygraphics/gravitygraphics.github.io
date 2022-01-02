@@ -7,15 +7,15 @@
 	<meta http-equiv='expires' content='0'>
 	<meta http-equiv='pragma' content='no-cache'>
 	<link href="../css/lessons.css" rel="stylesheet">
-
+	<script src="../lib/JQuery/jquery-3.6.0.min.js"></script>
 	<script src="../js/lessons.js"></script>
 </head>
 
 <body>
 	<div id="lesson2" class="lesson">
-		<h1>Lesson 3: Pixels</h1>
+		<h1>Lesson 3: The Grid</h1>
 
-		<p>Each square on the grid is called a pixel.</p>
+		<p>The graphical screen and is divided into a grid containing squares. </p>
 
 
 		<div id="buttons">
@@ -25,20 +25,74 @@
 	</div>
 	<textarea id="LessonRunCode">
 gr();
-while(true) {
-	clear();
-	drawgrid();
-
-	dot(random(0,59), random(0,39));
-	await delay(1);
+clear();
+hidecursor();
+var posX = 0;
+var posY = 0;
+for (var i=0; i<100; i++) {
+		
+	if (posX < 600) {
+		// draw thin line
+		gravitygraphicscontext.beginPath();
+		gravitygraphicscontext.moveTo(posX, 0);
+		gravitygraphicscontext.lineTo(posX, 400);
+		gravitygraphicscontext.strokeStyle = "#666";
+		gravitygraphicscontext.stroke();
+		
+		posX = posX + 10;
+	}
+	
+	if (posX == 600) {
+		if (posY < 400) {
+			gravitygraphicscontext.beginPath();
+			gravitygraphicscontext.moveTo(0, posY);
+			gravitygraphicscontext.lineTo(600, posY);
+			gravitygraphicscontext.strokeStyle = "#666";
+			gravitygraphicscontext.stroke();
+			posY = posY + 10;
+		}
+	}
+	
+	refresh();
+	await delay(0.03);
 }
+/* 
+var posX = 0;
+var posY = 0;
 
+wait(0.03);
+		
+function tick() {
+	if (posX < 600) {
+		// draw thin line
+		gravitygraphicscontext.beginPath();
+		gravitygraphicscontext.moveTo(posX, 0);
+		gravitygraphicscontext.lineTo(posX, 400);
+		gravitygraphicscontext.strokeStyle = "#666";
+		gravitygraphicscontext.stroke();
+		
+		posX = posX + 10;
+	}
+	
+	if (posX == 600) {
+		if (posY < 400) {
+			gravitygraphicscontext.beginPath();
+			gravitygraphicscontext.moveTo(0, posY);
+			gravitygraphicscontext.lineTo(600, posY);
+			gravitygraphicscontext.strokeStyle = "#666";
+			gravitygraphicscontext.stroke();
+			posY = posY + 10;
+		}
+	}
+}
+*/
 </textarea>
 	<textarea id="LessonExampleCode">
 
 </textarea>
+
 	<script>
-		parent.LoadYourCode("TextAreaYourCode", "Lesson3");
+		parent.LoadYourCode("TextAreaYourCode", "Lesson2");
 		parent.HideHelper();
 		parent.HideHelperButton();
 	</script>

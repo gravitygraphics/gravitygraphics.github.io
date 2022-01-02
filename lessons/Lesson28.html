@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv='cache-control' content='no-cache'>
+	<meta http-equiv='expires' content='0'>
+	<meta http-equiv='pragma' content='no-cache'>
+	<link href="../css/lessons.css" rel="stylesheet">
+	<script src="../lib/JQuery/jquery-3.6.0.min.js"></script>
+	<script src="../js/lessons.js"></script>
+</head>
+
+<body>
+	<div id="lesson" class="lesson">
+		<h1>Lesson 28: Input</h1>
+
+		<p>We can also get the computer to ask us for a name of the spot.</p>
+		<p>To do that, use the <b>await input</b> statement.</p>
+		<p>The code below will let the computer ask the user for name, and store it in a variable called <b>name</b>.</p>
+		<pre>var name = await input ("What is your name:")</pre>
+		<p>After getting the user's name we can print our a customized greeting message using the user's name.</p>
+		<pre>text("Hello " + name)</pre>
+
+		<h3></h3>
+		<div id="buttons">
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson27.html');">Lesson 27</button>
+			<button class="buttonNextLesson" onclick="NavigateTo('Lesson29.html')">Lesson 29</button>
+		</div>
+	</div>
+
+	<textarea id="LessonRunCode">
+gr()
+</textarea>
+	<textarea id="LessonExampleCode">
+gr()
+var name = await input ("What is your name:")
+text("Hello " + name, x="center", y="center", color=random(1,15), fontsize=26)
+dot(random(0,59), random(0,35), random(1,15))
+dot(random(0,59), random(0,35), random(1,15))
+</textarea>
+	<script>
+		parent.ShowExample();
+		parent.LoadYourCode("TextAreaYourCode", "Lesson1");
+		parent.HideHelper();
+		parent.HideHelperButton();
+	</script>
+</body>
+
+</html>

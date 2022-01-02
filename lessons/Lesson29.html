@@ -12,16 +12,18 @@
 </head>
 
 <body>
-	<div id="lesson1" class="lesson">
-		<h1>Lesson 20: Placing Text on the Graphics Screen</h1>
+	<div id="lesson" class="lesson">
+		<h1>Lesson 29: Math</h1>
 
-		<p>We can also put text on the graphics screen by using the command:</p>
-		<pre>text("Hello World")</pre>
+		<p>The computer can also perform math calculations.</p>
+		<p>You can type:</p>
+		<pre>print(2+3)</pre>
+		<p>And the computer will print out the answer.</p>
 
 		<h3></h3>
 		<div id="buttons">
-			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson19.html')">Lesson 19</button>
-			<button class="buttonNextLesson" onclick="NavigateTo('Lesson21.html')">Lesson 21</button>
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson28.html');">Lesson 28</button>
+			<button class="buttonNextLesson" onclick="NavigateTo('Lesson30.html')">Lesson 30</button>
 		</div>
 	</div>
 
@@ -30,8 +32,8 @@ gr()
 </textarea>
 	<textarea id="LessonExampleCode">
 gr()
-text("Hello", x= 0, y=0)
-
+print(2+3)
+text(2+3, x="center", y="center", color=random(1,15), fontsize=26)
 </textarea>
 	<script>
 		parent.ShowExample();

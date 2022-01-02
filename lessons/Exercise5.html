@@ -13,18 +13,13 @@
 
 <body>
 	<div id="lesson" class="lesson">
-		<h1>Lesson 15: Optional Labels</h1>
+		<h1>Exercise 5:</h1>
 
-		<p>We can omit the labels such as: <b>x=</b>, <b>y=</b>, and <b>color=</b> if we want to.</p>
-
-		<p>Therefore, a line like this:</p>
-		<pre>dot(x=30, y=20, color="red")</pre>
-		<p>can also be written as:</p>
-		<pre>dot(30, 20, "red")</pre>
+		<p>Add two random dots of random colors to your code in Exercise 4</p>
 
 		<div id="buttons">
-			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson14.html')">Lesson 14</button>
-			<button class="buttonNextLesson" onclick="NavigateTo('Exercise3.html')">Exercise 3</button>
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Exercise4.html')">Exercise 4</button>
+			<button class="buttonNextLesson" onclick="NavigateTo('Lesson24.html')">Lesson 24</button>
 		</div>
 	</div>
 	<textarea id="LessonRunCode">
@@ -32,12 +27,14 @@ gr()
 </textarea>
 	<textarea id="LessonExampleCode">
 gr()
-dot(30, 20, "red")
+text("Hello", x="center", y="center", color=random(1,15), fontsize=26)
+dot(random(0,59), random(0,35), random(1,15))
+dot(random(0,59), random(0,35), random(1,15))
 </textarea>
 	<script>
-		parent.ShowExample()
 		parent.LoadYourCode("TextAreaYourCode", "Excercise3");
 		parent.HideHelper()
+		parent.HideSolution();
 	</script>
 </body>
 

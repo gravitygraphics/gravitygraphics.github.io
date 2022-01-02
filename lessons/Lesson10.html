@@ -13,28 +13,27 @@
 
 <body>
 	<div id="lesson" class="lesson">
-		<h1>Lesson 10: Colors</h1>
+		<h1>Lesson 10: Change up the numbers</h1>
 
-		<p>There are 16 colors in our palette that you can choose from.</p>
-		<p>The colors range from 0 to 15.</p>
-
+		<p>You can change the numbers of x and y in your code and click <b>RUN YOUR CODE</b> to see where your dots appears on the screen.</p>
+		<p>You can also plot more pixels in your program by adding more lines of code in your program.</p>
 
 		<div id="buttons">
-			<button class="buttonPreviousLesson" onclick="NavigateTo('Exercise2.html')">Excercise 2</button>
-			<button class="buttonNextLesson" onclick="NavigateTo('Lesson11.html')">Lesson 11</button>
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson9.html')">Lesson 9</button>
+			<button class="buttonNextLesson" onclick="NavigateTo('Exercise1.html')">Excercise 1</button>
 		</div>
 	</div>
 	<textarea id="LessonRunCode">
 gr()
-displayColors6x2()
 </textarea>
 	<textarea id="LessonExampleCode">
-
+gr()
+dot(x=30, y=20)
+dot(x=10, y=10)
 </textarea>
 	<script>
 		parent.ShowExample();
-		parent.LoadYourCode("TextAreaYourCode", "Lesson10");
-		parent.HideHelper();
+		parent.LoadYourCode("TextAreaYourCode", "Lesson9");
 	</script>
 </body>
 

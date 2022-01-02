@@ -12,31 +12,35 @@
 
 <body>
 	<div id="lesson" class="lesson">
-		<h1>Lesson 6: Pixel Coordinates</h1>
+		<h1>Lesson 6: The Helper and Axis</h1>
 
-		<p>A pixel on the screen is describe by a set of coordinates which is its location on the x and y axis.</p>
-		<p>To plot a pixel, you need to determine its x and y coordinates.</p>
+		<p>The helper consist of the ruler and guide lines to help you locate where you are on the screen.</p>
+		<p>The blue horizontal ruler shows where you are on the x-axis.</p>
+		<p>The red vertical ruler shows where you are on the y-axis.</p>
+		<p>Hover your mouse over the screen to get the position on the x and y axis.</p>
 
-		<p><b>STEP 1:</b> Hover your mouse to where you want to draw your dot on the X axis and click on it.</p>
-
-		<p><b>STEP 2:</b> Hover your mouse to where you want to draw your dot on the Y axis and click on it.</p>
-
+		<h3></h3>
 		<div id="buttons">
-			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson5.html')">Lesson5</button>
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson5.html')">Lesson 5</button>
 			<button class="buttonNextLesson" onclick="NavigateTo('Lesson7.html')">Lesson 7</button>
 		</div>
 	</div>
 	<textarea id="LessonRunCode">
 gr();
 drawgrid();
-SetAllow(true, false);
+SetAllow(true, true);
 </textarea>
 	<textarea id="LessonExampleCode">
+gr()
+debugcanvas()
+drawgrid()
+print ("hello")
 
 </textarea>
 	<script>
-		parent.LoadYourCode("TextAreaYourCode", "Lesson6");
+		parent.LoadYourCode("TextAreaYourCode", "Lesson5");
 		parent.ShowHelper();
+		parent.ShowHelperButton();
 	</script>
 </body>
 

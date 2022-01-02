@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv='cache-control' content='no-cache'>
+	<meta http-equiv='expires' content='0'>
+	<meta http-equiv='pragma' content='no-cache'>
+	<link href="../css/lessons.css" rel="stylesheet">
+	<script src="../lib/JQuery/jquery-3.6.0.min.js"></script>
+	<script src="../js/lessons.js"></script>
+</head>
+
+<body>
+	<div id="lesson" class="lesson">
+		<h1>Lesson 26: Variables</h1>
+
+		<p>A variable is something you can store values in, such as a string. Let's create a variable called <b>name</b> and insert a name into the variable like this:</p>
+		<pre>var name = "Moles"</pre>
+		<p>Now we can join the variable with our string "Hello" by typing:</p>
+		<pre>text("Hello " + name)</pre>
+		<p>Note that the variable <b>name</b> is not in quotes <b>""</b>.</p>
+
+		<h3></h3>
+		<div id="buttons">
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Exercise6.html');">Exercise 6</button>
+			<button class="buttonNextLesson" onclick="NavigateTo('Lesson27.html')">Lesson 27</button>
+		</div>
+	</div>
+
+	<textarea id="LessonRunCode">
+gr()
+</textarea>
+	<textarea id="LessonExampleCode">
+gr()
+var name = "Moles"
+text("Hello " + name, x="center", y="center", color=random(1,15), fontsize=26)
+dot(random(0,59), random(0,35), random(1,15))
+dot(random(0,59), random(0,35), random(1,15))
+</textarea>
+	<script>
+		parent.ShowExample();
+		parent.LoadYourCode("TextAreaYourCode", "Lesson1");
+		parent.HideHelper();
+		parent.HideHelperButton();
+	</script>
+</body>
+
+</html>

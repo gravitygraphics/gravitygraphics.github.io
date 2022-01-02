@@ -13,29 +13,25 @@
 
 <body>
 	<div id="lesson" class="lesson">
-		<h1>Lesson 22: Variables</h1>
+		<h1>Lesson 22: Coloring the Text</h1>
 
-		<p>A variable is something you can store values in, such as a string.</p>
-		<p>Let's create a variable called <b>name</b> and insert a name into the variable like this:</p>
-		<pre>var name = "Moles"</pre>
-		<p>Now we add the variable into our "Hello" string by typing:</p>
-		<pre>print ("Hello " + name)</pre>
-		<p>Note that the variable <b>name</b> is not in quotes <b>""</b>.</p>
+		<p>You can change the color of the text by typing in:</p>
+		<pre>text ("Hello", x="center", y="center", color=3)</pre>
 
 		<h3></h3>
 		<div id="buttons">
-			<button class="buttonPreviousLesson" onclick="NavigateTo('lesson21.html');">Lesson 21</button>
-			<button class="buttonNextLesson" onclick="NavigateTo('Exercise4.html')">Exercise 4</button>
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson21.html')">Lesson 21</button>
+			<button class="buttonNextLesson" onclick="NavigateTo('Lesson23.html')">Lesson 23</button>
 		</div>
 	</div>
 
 	<textarea id="LessonRunCode">
-tr()
-print ("Hello Moles")
+gr()
 </textarea>
 	<textarea id="LessonExampleCode">
-var name = "Moles"
-print ("Hello " + name)
+gr()
+text("Hello", x="center", y="center", color=3)
+
 </textarea>
 	<script>
 		parent.ShowExample();

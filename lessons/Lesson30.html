@@ -12,16 +12,19 @@
 </head>
 
 <body>
-	<div id="lesson1" class="lesson">
-		<h1>Lesson 20: Placing Text on the Graphics Screen</h1>
+	<div id="lesson" class="lesson">
+		<h1>Lesson 30: Numbers in Variables</h1>
 
-		<p>We can also put text on the graphics screen by using the command:</p>
-		<pre>text("Hello World")</pre>
+		<p>You can also assign numbers to variables and the computer can add it up.</p>
+		<p>For example:</p>
+		<pre>var FirstNumber = 3
+var SecondNumber = 4
+print(FirstNumber + SecondNumber)</pre>
 
 		<h3></h3>
 		<div id="buttons">
-			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson19.html')">Lesson 19</button>
-			<button class="buttonNextLesson" onclick="NavigateTo('Lesson21.html')">Lesson 21</button>
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson29.html');">Lesson 29</button>
+			<!--button class="buttonNextLesson" onclick="NavigateTo('Lesson31.html')">Lesson 31</button-->
 		</div>
 	</div>
 
@@ -30,8 +33,9 @@ gr()
 </textarea>
 	<textarea id="LessonExampleCode">
 gr()
-text("Hello", x= 0, y=0)
-
+var FirstNumber = 3
+var SecondNumber = 4
+print(FirstNumber + SecondNumber)
 </textarea>
 	<script>
 		parent.ShowExample();
