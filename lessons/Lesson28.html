@@ -13,19 +13,19 @@
 
 <body>
 	<div id="lesson" class="lesson">
-		<h1>Lesson 28: Input</h1>
+		<h1>Lesson 28: Put Result Into Variable</h1>
 
-		<p>We can also get the computer to ask us for a name of the spot.</p>
-		<p>To do that, use the <b>await input</b> statement.</p>
-		<p>The code below will let the computer ask the user for name, and store it in a variable called <b>name</b>.</p>
-		<pre>var name = await input ("What is your name:")</pre>
-		<p>After getting the user's name we can print our a customized greeting message using the user's name.</p>
-		<pre>text("Hello " + name)</pre>
+		<p>Instead of printing the result directly like in the previous lesson, we can also transfer the result into a variable and print that variable.</p>
+		<p>For example:</p>
+		<pre>var FirstNumber = 40
+var SecondNumber = 2
+var Result = FirstNumber + SecondNumber
+print(Result)</pre>
 
 		<h3></h3>
 		<div id="buttons">
 			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson27.html');">Lesson 27</button>
-			<button class="buttonNextLesson" onclick="NavigateTo('Lesson29.html')">Lesson 29</button>
+			<!--button class="buttonNextLesson" onclick="NavigateTo('Lesso29.html')">Lesson 29</button-->
 		</div>
 	</div>
 
@@ -34,14 +34,15 @@ gr()
 </textarea>
 	<textarea id="LessonExampleCode">
 gr()
-var name = await input ("What is your name:")
-text("Hello " + name, x="center", y="center", color=random(1,15), fontsize=26)
-dot(random(0,59), random(0,35), random(1,15))
-dot(random(0,59), random(0,35), random(1,15))
+var FirstNumber = 40
+var SecondNumber = 2
+var Result = FirstNumber + SecondNumber
+text(Result)
+print(Result)
 </textarea>
 	<script>
 		parent.ShowExample();
-		parent.LoadYourCode("TextAreaYourCode", "Lesson1");
+		parent.LoadYourCode("TextAreaYourCode", "Lesson27");
 		parent.HideHelper();
 		parent.HideHelperButton();
 	</script>

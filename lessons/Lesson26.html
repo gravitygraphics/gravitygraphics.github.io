@@ -13,17 +13,16 @@
 
 <body>
 	<div id="lesson" class="lesson">
-		<h1>Lesson 26: Variables</h1>
+		<h1>Lesson 26: Math</h1>
 
-		<p>A variable is something you can store values in, such as a string. Let's create a variable called <b>name</b> and insert a name into the variable like this:</p>
-		<pre>var name = "Moles"</pre>
-		<p>Now we can join the variable with our string "Hello" by typing:</p>
-		<pre>text("Hello " + name)</pre>
-		<p>Note that the variable <b>name</b> is not in quotes <b>""</b>.</p>
+		<p>The computer can also perform math calculations.</p>
+		<p>You can type:</p>
+		<pre>print(2+3)</pre>
+		<p>And the computer will print out the answer.</p>
 
 		<h3></h3>
 		<div id="buttons">
-			<button class="buttonPreviousLesson" onclick="NavigateTo('Exercise6.html');">Exercise 6</button>
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson25.html');">Lesson 25</button>
 			<button class="buttonNextLesson" onclick="NavigateTo('Lesson27.html')">Lesson 27</button>
 		</div>
 	</div>
@@ -33,14 +32,12 @@ gr()
 </textarea>
 	<textarea id="LessonExampleCode">
 gr()
-var name = "Moles"
-text("Hello " + name, x="center", y="center", color=random(1,15), fontsize=26)
-dot(random(0,59), random(0,35), random(1,15))
-dot(random(0,59), random(0,35), random(1,15))
+print(2+3)
+text(2+3)
 </textarea>
 	<script>
 		parent.ShowExample();
-		parent.LoadYourCode("TextAreaYourCode", "Lesson1");
+		parent.LoadYourCode("TextAreaYourCode", "Lesson26");
 		parent.HideHelper();
 		parent.HideHelperButton();
 	</script>

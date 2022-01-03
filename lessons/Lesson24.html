@@ -13,19 +13,15 @@
 
 <body>
 	<div id="lesson" class="lesson">
-		<h1>Lesson 24: String</h1>
+		<h1>Lesson 24: The Use of Variables</h1>
 
-		<p>We call the word we want to print, like "Hello" a string because it is made out of a string are characters.</p>
-		<p>Characters can be indivisual alphabets, letters, numbers or symbols.</p>
-		<p>For example printing "Hello":</p>
-		<pre>print("Hello")</pre>
-		<p>is the same as:</p>
-		<pre>print("H" + "e" + "l" + "l" + "o")</pre>
-		<p>We can join characters or strings using the plus <b>+</b> sign.</p>
+		<p>One of the purpose of using variables, is that we don't have to change the content in our code multiple times.</p>
+		<p>Instead of inserting our names multiple times like in Exercise 6, we can just change the variable name in the example code below just once, and we can observe all the names in our code has changed.</p>
+		<p>Try changing the string "Moles" in the variable name. Run the example code and see the result.</p>
 
 		<h3></h3>
 		<div id="buttons">
-			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson23.html')">Lesson 23</button>
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson23.html');">Lesson 23</button>
 			<button class="buttonNextLesson" onclick="NavigateTo('Lesson25.html')">Lesson 25</button>
 		</div>
 	</div>
@@ -35,13 +31,16 @@ gr()
 </textarea>
 	<textarea id="LessonExampleCode">
 gr()
-print("Hello")
-print("H" + "e" + "l" + "l" + "o")
-
+var name = "Moles"
+text("Hello " + name)
+dot(random(0,59), random(0,35), random(1,15))
+dot(random(0,59), random(0,35), random(1,15))
+print("What would you like me to do, " + name + "?")
+print(name + ", I am good at making coffee.")
 </textarea>
 	<script>
 		parent.ShowExample();
-		parent.LoadYourCode("TextAreaYourCode", "Lesson1");
+		parent.LoadYourCode("TextAreaYourCode", "Lesson24");
 		parent.HideHelper();
 		parent.HideHelperButton();
 	</script>

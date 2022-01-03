@@ -13,14 +13,19 @@
 
 <body>
 	<div id="lesson" class="lesson">
-		<h1>Lesson 21: Centering the Text</h1>
+		<h1>Lesson 21: String</h1>
 
-		<p>You can center the text on the screen by typing in:</p>
-		<pre>text("Hello", x="center", y="center")</pre>
+		<p>We call the word we printed, like "Hello" a string because it is made out of a string are characters.</p>
+		<p>Characters can be indivisual alphabets, letters, numbers or symbols.</p>
+		<p>For example printing "Hello":</p>
+		<pre>print("Hello")</pre>
+		<p>is the same as:</p>
+		<pre>print("H" + "e" + "l" + "l" + "o")</pre>
+		<p>We can join characters or strings using the plus <b>+</b> sign.</p>
 
 		<h3></h3>
 		<div id="buttons">
-			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson20.html')">Lesson 20</button>
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Exercise4.html')">Exercise 4</button>
 			<button class="buttonNextLesson" onclick="NavigateTo('Lesson22.html')">Lesson 22</button>
 		</div>
 	</div>
@@ -30,12 +35,13 @@ gr()
 </textarea>
 	<textarea id="LessonExampleCode">
 gr()
-text("Hello", x="center", y="center")
+print("Hello")
+print("H" + "e" + "l" + "l" + "o")
 
 </textarea>
 	<script>
 		parent.ShowExample();
-		parent.LoadYourCode("TextAreaYourCode", "Lesson1");
+		parent.LoadYourCode("TextAreaYourCode", "Lesson21");
 		parent.HideHelper();
 		parent.HideHelperButton();
 	</script>

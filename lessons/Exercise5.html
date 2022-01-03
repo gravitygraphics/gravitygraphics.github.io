@@ -15,24 +15,32 @@
 	<div id="lesson" class="lesson">
 		<h1>Exercise 5:</h1>
 
-		<p>Add two random dots of random colors to your code in Exercise 4</p>
+		<p>Change the strings with the name "Moles" into your name in the example code below.</p>
+		<p>Run the example code to see the results.</p>
 
 		<div id="buttons">
-			<button class="buttonPreviousLesson" onclick="NavigateTo('Exercise4.html')">Exercise 4</button>
-			<button class="buttonNextLesson" onclick="NavigateTo('Lesson24.html')">Lesson 24</button>
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson22.html')">Lesson 22</button>
+			<button class="buttonNextLesson" onclick="NavigateTo('Lesson23.html')">Lesson 23</button>
 		</div>
 	</div>
 	<textarea id="LessonRunCode">
 gr()
+text("Hello " + "Moles")
+dot(random(0,59), random(0,35), random(1,15))
+dot(random(0,59), random(0,35), random(1,15))
+print("What would you like me to do, " + "Moles" + "?")
+print("Moles" + ", I am good at making coffee.")
 </textarea>
 	<textarea id="LessonExampleCode">
 gr()
-text("Hello", x="center", y="center", color=random(1,15), fontsize=26)
+text("Hello " + "Moles")
 dot(random(0,59), random(0,35), random(1,15))
 dot(random(0,59), random(0,35), random(1,15))
+print("What would you like me to do, " + "Moles" + "?")
+print("Moles" + ", I am good at making coffee.")
 </textarea>
 	<script>
-		parent.LoadYourCode("TextAreaYourCode", "Excercise3");
+		parent.LoadYourCode("TextAreaYourCode", "Excercise6");
 		parent.HideHelper()
 		parent.HideSolution();
 	</script>

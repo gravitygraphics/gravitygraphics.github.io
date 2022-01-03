@@ -13,15 +13,18 @@
 
 <body>
 	<div id="lesson" class="lesson">
-		<h1>Lesson 23: Size of Text</h1>
+		<h1>Lesson 23: Variables</h1>
 
-		<p>You can change the size of the text by typing in:</p>
-		<pre>text("Hello", x="center", y="center", color=3,<br>fontsize=26)</pre>
+		<p>A variable is something you can store values in, such as a string. Let's create a variable called <b>name</b> and insert a name into the variable like this:</p>
+		<pre>var name = "Moles"</pre>
+		<p>Now we can join the variable with our string "Hello" by typing:</p>
+		<pre>text("Hello " + name)</pre>
+		<p>Note that the variable <b>name</b> is not in quotes <b>""</b>.</p>
 
 		<h3></h3>
 		<div id="buttons">
-			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson21.html')">Lesson 21</button>
-			<button class="buttonNextLesson" onclick="NavigateTo('Exercise4.html')">Exercise 4</button>
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Exercise6.html');">Exercise 6</button>
+			<button class="buttonNextLesson" onclick="NavigateTo('Lesson27.html')">Lesson 27</button>
 		</div>
 	</div>
 
@@ -30,12 +33,14 @@ gr()
 </textarea>
 	<textarea id="LessonExampleCode">
 gr()
-text ("Hello", x="center", y="center", color=3, fontsize=26)
-
+var name = "Moles"
+text("Hello " + name)
+dot(random(0,59), random(0,35), random(1,15))
+dot(random(0,59), random(0,35), random(1,15))
 </textarea>
 	<script>
 		parent.ShowExample();
-		parent.LoadYourCode("TextAreaYourCode", "Lesson1");
+		parent.LoadYourCode("TextAreaYourCode", "Lesson23");
 		parent.HideHelper();
 		parent.HideHelperButton();
 	</script>

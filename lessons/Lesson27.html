@@ -13,11 +13,13 @@
 
 <body>
 	<div id="lesson" class="lesson">
-		<h1>Lesson 27: The Use of Variables</h1>
+		<h1>Lesson 27: Numbers in Variables</h1>
 
-		<p>One of the purpose of using variables, is that we don't have to change the content in our code multiple times.</p>
-		<p>Instead of inserting our names multiple times like in Exercise 6, we can just change the variable name in the example code below just once, and we can observe all the names in our code has changed.</p>
-		<p>Try changing the string "Moles" in the variable name. Run the example code and see the result.</p>
+		<p>You can also assign numbers to variables and the computer can add it up.</p>
+		<p>For example:</p>
+		<pre>var FirstNumber = 3
+var SecondNumber = 4
+print(FirstNumber + SecondNumber)</pre>
 
 		<h3></h3>
 		<div id="buttons">
@@ -31,16 +33,13 @@ gr()
 </textarea>
 	<textarea id="LessonExampleCode">
 gr()
-var name = "Moles"
-text("Hello " + name, x="center", y="center", color=random(1,15), fontsize=26)
-dot(random(0,59), random(0,35), random(1,15))
-dot(random(0,59), random(0,35), random(1,15))
-print("What would you like me to do, " + name + "?")
-print(name + ", I am good at making coffee.")
+var FirstNumber = 3
+var SecondNumber = 4
+print(FirstNumber + SecondNumber)
 </textarea>
 	<script>
 		parent.ShowExample();
-		parent.LoadYourCode("TextAreaYourCode", "Lesson1");
+		parent.LoadYourCode("TextAreaYourCode", "Lesson27");
 		parent.HideHelper();
 		parent.HideHelperButton();
 	</script>

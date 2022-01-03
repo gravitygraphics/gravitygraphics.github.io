@@ -15,11 +15,11 @@
 	<div id="lesson" class="lesson">
 		<h1>Exercise 4:</h1>
 
-		<p>Following the code from Lesson 23, change the color of the text "Hello" to a random color.</p>
+		<p>Add two random dots of random colors to your code in Lesson 20</p>
 
 		<div id="buttons">
-			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson23.html')">Lesson 23</button>
-			<button class="buttonNextLesson" onclick="NavigateTo('Exercise5.html')">Exercise 5</button>
+			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson20.html')">Lesson 20</button>
+			<button class="buttonNextLesson" onclick="NavigateTo('Lesson21.html')">Lesson 21</button>
 		</div>
 	</div>
 	<textarea id="LessonRunCode">
@@ -27,10 +27,12 @@ gr()
 </textarea>
 	<textarea id="LessonExampleCode">
 gr()
-text("Hello", x="center", y="center", color=random(1,15), fontsize=26)
+text("Hello")
+dot(random(0,59), random(0,35), random(1,15))
+dot(random(0,59), random(0,35), random(1,15))
 </textarea>
 	<script>
-		parent.LoadYourCode("TextAreaYourCode", "Excercise3");
+		parent.LoadYourCode("TextAreaYourCode", "Excercise5");
 		parent.HideHelper()
 		parent.HideSolution();
 	</script>

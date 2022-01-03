@@ -13,15 +13,17 @@
 
 <body>
 	<div id="lesson" class="lesson">
-		<h1>Lesson 22: Coloring the Text</h1>
+		<h1>Lesson 22: Joining Strings</h1>
 
-		<p>You can change the color of the text by typing in:</p>
-		<pre>text ("Hello", x="center", y="center", color=3)</pre>
+		<p>You can also join strings together like the string "Hello" with the string "Moles" to get the string "Hello Moles"</p>
+		<pre>print ("Hello" + " " + "Moles")</pre>
+		<p>The result would be the same as printing it as a whole string:</p>
+		<pre>print ("Hello Moles")</pre>
 
 		<h3></h3>
 		<div id="buttons">
 			<button class="buttonPreviousLesson" onclick="NavigateTo('Lesson21.html')">Lesson 21</button>
-			<button class="buttonNextLesson" onclick="NavigateTo('Lesson23.html')">Lesson 23</button>
+			<button class="buttonNextLesson" onclick="NavigateTo('Exercise5.html')">Exercise 5</button>
 		</div>
 	</div>
 
@@ -30,12 +32,11 @@ gr()
 </textarea>
 	<textarea id="LessonExampleCode">
 gr()
-text("Hello", x="center", y="center", color=3)
-
+print ("Hello" + " " + "Moles")
 </textarea>
 	<script>
 		parent.ShowExample();
-		parent.LoadYourCode("TextAreaYourCode", "Lesson1");
+		parent.LoadYourCode("TextAreaYourCode", "Lesson22");
 		parent.HideHelper();
 		parent.HideHelperButton();
 	</script>
