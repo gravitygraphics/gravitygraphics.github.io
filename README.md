@@ -8,6 +8,11 @@ How to include Gravity BASIC into your html page:
 
 ```
 
+# To use Gravity B.A.S.I.C cdn as a link
+```html
+<script src="https://gravitygraphics.github.io/cdn/GravityBasic.min.js"></script>
+```
+
 # Gravity B.A.S.I.C Manual
 `gr()`
 
