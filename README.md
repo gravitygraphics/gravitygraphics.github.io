@@ -1,27 +1,28 @@
-# Using Gravity B.A.S.I.C
+## Using Gravity B.A.S.I.C
 How to include Gravity BASIC into your html page:
 ```html
-<script src="./core/GravityGraphics/GravityBasic.js"></script>
-
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+<link rel="icon" type="image/x-icon" href="https://gravitygraphics.github.io/imgs/favicon.ico">
+<link rel="stylesheet" type="text/css" href="https://gravitygraphics.github.io/cdn/GravityStyle.css">
+</head>
+<body>
 <div id="gravityscreen">
+
 </div>
-
-<script>
-// your code goes here
-</script>
-
-```
-
-# To use Gravity B.A.S.I.C cdn as a link
-```html
 <script src="https://gravitygraphics.github.io/cdn/GravityBasic.min.js"></script>
-
-<div id="gravityscreen">
-</div>
-
 <script>
-// your code goes here
+
+function start() {
+	fullscreen();
+	gr()
+	print("Hello World");
+}
 </script>
+</body>
+</html>
 ```
 
 # Gravity B.A.S.I.C Manual
