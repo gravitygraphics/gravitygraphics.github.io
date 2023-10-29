@@ -625,7 +625,7 @@ function showcursor() {
 }
 
 function blinkcursor() {
-	if ((is_input == false) && (print_buffer == "") && (cursor_hide == true)) {
+	if ((cursor_hide == true)) {
 		// DO NOTHING
 	}
 	else {
