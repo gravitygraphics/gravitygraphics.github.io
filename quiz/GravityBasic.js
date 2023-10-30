@@ -390,6 +390,7 @@ function setupcanvas(width=600, height=440) {
 	var div = document.getElementById("gravityscreen");
 	div.style.width  = width+"px";
 	div.style.height = height+"px";
+	div.style.left = "-"+width+"px";
 	
 	gravitygraphics.id     = "gravitygraphics";
 	gravitygraphics.width  = width;
