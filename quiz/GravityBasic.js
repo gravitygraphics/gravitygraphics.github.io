@@ -396,7 +396,7 @@ function setupcanvas(width=600, height=440) {
 	gravitygraphics.height = height;
 	gravitygraphics.style.zIndex   = 1;
 	gravityterminal.style.position = "absolute";
-	gravitygraphics.style.left = "0";
+	gravitygraphics.style.left = "-600px";
 	gravitygraphics.style.top = "0";
 	gravitygraphics.style.backgroundColor = "#000";
 	//gravitygraphics.style.border   = "1px solid blue";
@@ -406,7 +406,7 @@ function setupcanvas(width=600, height=440) {
 	gravityterminal.height = height;
 	gravityterminal.style.zIndex   = 2;
 	gravityterminal.style.position = "absolute";
-	gravityterminal.style.left = "0";
+	gravityterminal.style.left = "-600px";
 	gravityterminal.style.top = "0";
 	gravityterminal.style.backgroundColor = "#000";
 	//gravityterminal.style.border   = "1px solid green";
@@ -416,7 +416,7 @@ function setupcanvas(width=600, height=440) {
 	gravitymix.height = height;
 	gravitymix.style.zIndex   = 999;
 	gravitymix.style.position = "absolute";
-	gravitymix.style.left = "0";
+	gravitymix.style.left = "-600px";
 	gravitymix.style.top = "0";
 	gravitymix.style.backgroundColor = "#000";
 	
@@ -453,9 +453,9 @@ function fullscreen() {
 function fullscreenON() {
 	fullscreenmode = true;
 	gravityfullscreen.style.display = 'block';
-	gravitygraphics.style.left = "-600";
-	gravityterminal.style.left = "-600";
-	gravitymix.style.left = "-600";
+	gravitygraphics.style.left = "-600px";
+	gravityterminal.style.left = "-600px";
+	gravitymix.style.left = "-600px";
 	
 	fullscreenUPDATE();
 	
