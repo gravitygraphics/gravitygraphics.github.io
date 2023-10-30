@@ -293,6 +293,8 @@ var prompt = "";
 
 intervalID = setInterval(blinkcursor, 300);	
 
+var gravityfullscreencontainer = document.getElementById("gravityscreen");
+
 var gravitygraphics = document.createElement('canvas');
 var gravitygraphicscontext = gravitygraphics.getContext("2d");
 var gravityterminal = document.createElement('canvas');
@@ -387,10 +389,12 @@ function debugcanvas(width=600, height=440) {
 }	
 
 function setupcanvas(width=600, height=440) {
-	var div = document.getElementById("gravityscreen");
-	div.style.width  = width+"px";
-	div.style.height = height+"px";
-	div.style.left = "-"+width+"px";
+	var gravityscreen = document.getElementById("gravityscreen");
+	gravityscreen.style.width  = width+"px";
+	gravityscreen.style.height = height+"px";
+	gravityscreen.style.left = "-600px";
+	gravityscreen.style.backgroundColor = "orange";
+	gravityscreen.style.zIndex = 0
 	
 	gravitygraphics.id     = "gravitygraphics";
 	gravitygraphics.width  = width;
@@ -399,7 +403,7 @@ function setupcanvas(width=600, height=440) {
 	gravityterminal.style.position = "absolute";
 	gravitygraphics.style.left = "-600px";
 	gravitygraphics.style.top = "0";
-	gravitygraphics.style.backgroundColor = "#000";
+	gravitygraphics.style.backgroundColor = "blue";
 	//gravitygraphics.style.border   = "1px solid blue";
 	
 	gravityterminal.id   = "gravityterminal";
@@ -409,31 +413,40 @@ function setupcanvas(width=600, height=440) {
 	gravityterminal.style.position = "absolute";
 	gravityterminal.style.left = "-600px";
 	gravityterminal.style.top = "0";
-	gravityterminal.style.backgroundColor = "#000";
+	gravityterminal.style.backgroundColor = "red";
 	//gravityterminal.style.border   = "1px solid green";
 	
 	gravitymix.id   = "gravitymix";
 	gravitymix.width  = width;
 	gravitymix.height = height;
-	gravitymix.style.zIndex   = 999;
+	gravitymix.style.zIndex   = 9;
 	gravitymix.style.position = "absolute";
 	gravitymix.style.left = "-600px";
 	gravitymix.style.top = "0";
-	gravitymix.style.backgroundColor = "#000";
+	gravitymix.style.backgroundColor = "yellow";
 	
-	gravityfullscreen.id   = "gravityfullscreen";
+	gravityfullscreen.id = "gravityfullscreen";
 	gravityfullscreen.style.width  = "100%";
 	gravityfullscreen.style.height = "calc(100vh - 64px)";
-	gravityfullscreen.style.zIndex   = 10000;
+	gravityfullscreen.style.zIndex   = 11;
 	gravityfullscreen.style.position = "absolute";
 	gravityfullscreen.style.left = "0";
 	gravityfullscreen.style.top = "0";
-	gravityfullscreen.style.backgroundColor = "#000";
+	gravityfullscreen.style.backgroundColor = "purple";
 	
-	div.appendChild(gravitygraphics)
-	div.appendChild(gravityterminal)
-	div.appendChild(gravitymix)
-	div.appendChild(gravityfullscreen)
+
+	gravityscreen.appendChild(gravitygraphics)
+	gravityscreen.appendChild(gravityterminal)
+	gravityscreen.appendChild(gravitymix)
+	
+	gravityfullscreencontainer = document.getElementById("gravityfullscreencontainer");
+	gravityfullscreencontainer.style.zIndex = 10;
+	gravityfullscreencontainer.style.backgroundColor = "cyan";
+	gravityfullscreencontainer.style.border = "5px solid red";
+	gravityfullscreencontainer.style.width = "90%";
+	gravityfullscreencontainer.style.height = "90vh";
+	// gravityfullscreencontainer.style.display = "none";
+	gravityfullscreencontainer.appendChild(gravityfullscreen);
 	
 	// SETUP TERMINAL
 	gravitygraphicscontext.font = terminal_font;
@@ -457,6 +470,9 @@ function fullscreenON() {
 	gravitygraphics.style.left = "-600px";
 	gravityterminal.style.left = "-600px";
 	gravitymix.style.left = "-600px";
+	// gravitygraphics.style.display = "none";
+	// gravityterminal.style.display = "none";
+	// gravitymix.style.display = "none";
 	
 	fullscreenUPDATE();
 	
@@ -481,6 +497,8 @@ function fullscreenUPDATE() {
 	// Initialize fullscreen canvas size
 	gravityfullscreen.width = window.outerWidth;
 	gravityfullscreen.height = window.innerHeight;
+	gravityfullscreencontainer.width = window.outerWidth;
+	gravityfullscreencontainer.height = window.innerHeight;
 	// alert("window.innerWidth:" + window.innerWidth);
 	// Function to copy the source canvas to the fullscreen canvas
 	gravityfullscreencontext.clearRect(0, 0, gravityfullscreen.width, gravityfullscreen.height);
