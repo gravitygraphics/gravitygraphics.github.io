@@ -50,7 +50,9 @@ input:focus {
 
 #gravityfullscreen {
 	width:100%;
-	height:calc(100vh - 64px);
+	height: -webkit-calc(100vh - 64px);
+    height: -moz-calc(100vh - 64px);
+    height: calc(100vh - 64px);
 }
 
 #buttonbar {
@@ -144,7 +146,7 @@ function fullscreenUPDATE() {
 	else {
 		gravityfullscreen.style.height = "100vh";
 	}
-	gravityfullscreen.style.backgroundColor = "blue";
+	gravityfullscreen.style.backgroundColor = "#444";
 	// alert("window.innerWidth:" + window.innerWidth);
 	// Function to copy the source canvas to the fullscreen canvas
 	gravityfullscreencontext.clearRect(0, 0, gravityfullscreen.width, gravityfullscreen.height);
