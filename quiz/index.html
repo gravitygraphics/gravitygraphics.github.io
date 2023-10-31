@@ -9,16 +9,16 @@
 <style>
 #inputbar {
 	width:100%;
-	height:64px;
+	height:10%;
 	position:fixed;
 	bottom:0;
 	z-index:20000;
-	background-color:#222;
+	background-color:#000;
 }
 
 #input {
 	width: 100%;
-	height:64px;
+	height:10%;
 	background-color: #0f2417;
 	border:0px solid #222;
 	font-family:"II40";
@@ -50,19 +50,17 @@ input:focus {
 
 #gravityfullscreen {
 	width:100%;
-	height: -webkit-calc(100vh - 64px);
-    height: -moz-calc(100vh - 64px);
-    height: calc(100vh - 64px);
+	height: 90%;
 }
 
 #buttonbar {
 	width:100%;
-	height:64px;
+	height:10%;
 	z-index:20000;
 }
 
 .button {
-	height:64px;
+	height:10%;
 	background-color: #444;
 	border-radius: 10px;
 	font-family:"II40";
@@ -141,12 +139,12 @@ function fullscreenUPDATE() {
 	gravityfullscreencontainer.width = window.outerWidth;
 	console.log(is_mobile + " " + is_desktop);
 	if (is_mobile) {
-		gravityfullscreen.style.height = "calc(100vh - 70px)";
+		gravityfullscreen.style.height = "90%";
 	}
 	else {
 		gravityfullscreen.style.height = "100vh";
 	}
-	gravityfullscreen.style.backgroundColor = "#444";
+	gravityfullscreen.style.backgroundColor = "#000";
 	// alert("window.innerWidth:" + window.innerWidth);
 	// Function to copy the source canvas to the fullscreen canvas
 	gravityfullscreencontext.clearRect(0, 0, gravityfullscreen.width, gravityfullscreen.height);
