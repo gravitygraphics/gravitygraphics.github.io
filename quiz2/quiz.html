@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link rel="icon" type="image/x-icon" href="https://gravitygraphics.github.io/imgs/favicon.ico">
+<!--link rel="stylesheet" type="text/css" href="https://gravitygraphics.github.io/cdn/GravityStyle.css"--->
+<link rel="stylesheet" type="text/css" href="./GravityStyle.css">
+<style>
+#inputbar {
+	width:100%;
+	height:10vh;
+	position:fixed;
+	bottom:0;
+	z-index:20000;
+	background-color:#000;
+}
+
+#input {
+	width: 100%;
+	height:10vh;
+	background-color: #0f2417;
+	border:0px solid #222;
+	font-family:"II40";
+	font-weight:bold;
+	font-size:42px;
+	color:black;
+	display:none;
+	position:absolute;
+	top:200px;
+}
+
+input:focus {
+    background-color: "#333";
+    outline: none;
+}
+
+#gravitygraphics, #gravityterminal, #gravitymix {
+	display:none;
+}
+
+#gravityscreen {
+	display:none;
+}
+
+#gravityfullscreencontainer {
+
+}
+#gravityfullscreen {
+	width:100%;
+	height:90vh;
+}
+
+</style>
+</head>
+<body onclick="setFocusInput();">
+<div id="gravityscreen">
+
+</div>
+<div id="gravityfullscreencontainer">
+
+</div>
+<div id="inputbar">
+	<div id="statusbar">
+		<div></div>
+	</div>
+	<input id="input"autofocus>
+</div>
+<div id="audio"></div>
+<!--script src="https://cdn.jsdelivr.net/npm/tone@14"></script-->
+<!--script src="https://gravitygraphics.github.io/cdn/GravityBasic.min.js"></script-->
+<script src="./GravityBasic.js"></script>
+
+<script>
+var totalQuestions = 0;
+var totalCorrectAnswers = 0;
+var totalAttempts = 0;
+var buttonAnswer = -1; // THIS IS TO KEEP TRACK OF BUTTON ANSWER and use it to replace userAnswer
+
+async function start() {
+	fullscreen();
+	row_max = 22;
+	line_height = 19;
+	
+	// EXAMPLE OF HOW TO CALL A QUESTION INDIVIDUALLY FOR TESTING PURPOSES.
+	// await questionCorrectWayToWriteKarelTurnRightFunction();
+
+	// const functionArray = [questionSpinKarel];
+	
+	const functionArray = [questionControlStructureKarelMoveIfFrontIsClear, questionControlStructureKarelPutABall, questionControlStructureKarelTakeAllBalls, questionControlStructureKarelMove6Times, questionControlStructureKarelTakePutBall, questionWhyDoWeUseControlStructure, questionWhichAreExamplesOfControlStructure, questionWhatDoesWhileStatementLookLike, questionWhyDoWeUseWhileLoop, questionWhatDoWeUseIfElseStatement, questionWhatDoesIfElseStatementLookLike, questionWhyDoWeUseIfStatement, questionWhichIsCorrectIfStatement, questionWhichIsBestToMove5Times, questionWhichAreCorrectForLoopSyntax, questionWhatAreSuperKarelCommands, questionWhatIsCodeComment, questionHowManyTimesShouldStartFunctionBeCalled, questionHowManyTimesShouldStartFunctionBeDefined, questionSpinKarel, questionHowManyTimesTurnRightDefined, questionPurposeOfLoop, questionPostcondition, questionImproveProgram, questionWhyTopDownDesign, questionProgramWontRun, questionKarelCrashWall, questionKarelPut300Balls, questionHowToTeachKarelNewCommands, questionWhyIndentCode, questionWhichConditionShouldBeUsed, questionHowManyBallsNow, questionWhichIsACondition, questionWhichIsNotACondition, questionMysteryFunction, questionWhatsWrongWithForLoop, questionTotalMoves, questionTwiceDefined, questionDance, questionStairStep, questionWhereKarelMoveTo, questionWhyDoWeUseFunction, questionCorrectWayToWriteKarelTurnRightFunction, questionWhichIsCorrectCaptitalizationSyntax, questionWhichIsACommandSyntax, questionWhichIsACommand];
+	
+	totalQuestions = functionArray.length;
+	
+	// Function to shuffle an array using the Fisher-Yates algorithm
+	function shuffleArray(array) {
+	  for (let i = array.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[array[i], array[j]] = [array[j], array[i]];
+	  }
+	}
+
+	// Shuffle the array of functions
+	shuffleArray(functionArray);
+
+	// Call the functions in the shuffled order
+	for (const func of functionArray) {
+		showButtons("buttonNumbers");
+		await func();
+	}
+	
+	// ASK IF WANT TO START OVER
+	home();
+	//const inputBarElement = document.getElementById("inputbar");
+	//inputBarElement.style.display = "none";
+	showButtons("buttonNumbers");
+	fullscreenUPDATE();
+	askStartOver();
+}
+
+async function questionControlStructureKarelMoveIfFrontIsClear() {
+	var correct_options_list = ['If Statement']
+	var wrong_options_list = [
+		'For Loop',
+		'While Loop',
+		'If/Else statement'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "You need to write a program that has Karel move if the front is clear, but if it isn’t clear, Karel will do nothing. Which control structure do you need to use?");
+}
+
+
+async function questionControlStructureKarelPutABall() {
+	var correct_options_list = ['If Statement']
+	var wrong_options_list = [
+		'For Loop',
+		'While Loop',
+		'If/Else statement'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "You need to write a program that has Karel put down a tennis ball if the world has dimensions of 1x1. Which control structure do you need to use?");
+}
+
+async function questionControlStructureKarelTakeAllBalls() {
+	var correct_options_list = ['While Loop']
+	var wrong_options_list = [
+		'For Loop',
+		'If Statement',
+		'If/Else statement'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "You need to write a program that has Karel take all the tennis balls where Karel is standing if there are any there. Karel should end up with no tennis balls on that spot. Which control structure do you need to use?");
+}
+
+async function questionControlStructureKarelMove6Times() {
+	var correct_options_list = ['For loop']
+	var wrong_options_list = [
+		'While Loop',
+		'If Statement',
+		'If/Else statement'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "You need to write a program that has Karel move 6 times and then put a ball. Which control structure do you need to use?");
+}
+
+async function questionControlStructureKarelTakePutBall() {
+	var correct_options_list = ['If/Else statement']
+	var wrong_options_list = [
+		'For Loop',
+		'While Loop',
+		'If Statement'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "You need to write a program where Karel will take a ball if there is a ball present, otherwise Karel should put down a ball. Which control structure do you need to use?");
+}
+
+async function questionWhyDoWeUseControlStructure() {
+	var correct_options_list = ['Control the flow of the program; how the commands execute.']
+	var wrong_options_list = [
+		'Start our JavaScript program',
+		'Store information for later',
+		'Teach Karel new commands'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "Why do you use control structures?");
+}
+
+async function questionWhichAreExamplesOfControlStructure() {
+	var correct_options_list = ['I, II, III, and IV']
+	var wrong_options_list = [
+		'I only',
+		'I and II only',
+		'III and I only'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "Which of the below are examples of control structures?", "(I)   if\n(II)  if/else\n(III) while\n(IV)  for");
+}
+
+
+async function questionWhatDoesWhileStatementLookLike() {
+	var correct_options_list = ['while (condition) {\n    //code\n}']
+	var wrong_options_list = [
+		'while (x is true) {\n    //code\n}',
+		'if (i < 5) {\n    //code\n}',
+		'while (var i = 0; i < count; i++) {\n    //code\n}'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "Which general while loop definition is written correctly?");
+}
+
+async function questionWhyDoWeUseWhileLoop() {
+	var correct_options_list = ['To repeat some code while a condition is true']
+	var wrong_options_list = [
+		'To break out of some block of code',
+		'To do something if a condition is true',
+		'To repeat something for a fixed number of times'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "Why do we use while loops in JavaScript?");
+}
+
+async function questionWhatDoWeUseIfElseStatement() {
+	var correct_options_list = ['To either do something if a condition is true or do something else']
+	var wrong_options_list = [
+		'To repeat something for a fixed number of times',
+		'To break out of some block of code',
+		'To repeat something while a condition is true'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "Why do we use if/else statements in JavaScript?");
+}
+
+async function questionWhatDoesIfElseStatementLookLike() {
+	var correct_options_list = ['if (condition) {\n    //code\n} else {\n    //code\n}']
+	var wrong_options_list = [
+		'if (condition) {\n    //code\n}',
+		'for (var i = 0; i < count; i++) {\n    //code\n}',
+		'if (condition) {\n    //code\n}\nif  (condition) {\n    //code\n}'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "What does an if/else statement look like in JavaScript?");
+}
+
+async function questionWhyDoWeUseIfStatement() {
+	var correct_options_list = ['To do something only if a condition is true']
+	var wrong_options_list = [
+		'To break out of some block of code',
+		'To do something while a condition is true',
+		'To repeat something for a fixed number of times'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "Why do we use the if statement?");
+}
+
+async function questionWhichIsCorrectIfStatement() {
+	var correct_options_list = ['if(condition) {\n    //code\n}\n']
+	var wrong_options_list = [
+		'for(condition) {\n    //code\n}\n',
+		'if(var i = 0; i < count; i++) {\n    //code\n}\n',
+		'if false {\n    //code\n}\n'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "Which general if statement definition is written correctly?");
+}
+
+async function questionWhichIsBestToMove5Times() {
+	var correct_options_list = ['for(var i = 0; i < 5; i++) {\n    move();\n}\n']
+	var wrong_options_list = [
+		'\nmove();\nmove();\nmove();\nmove();\nmove();\n',
+		'move(5);\n',
+		'move5();\n'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "What is the best way for Karel to move 5 times?");
+}
+
+async function questionWhichAreCorrectForLoopSyntax() {
+	var correct_options_list = ['for(var i = 0; i < 4; i++) {\n    turnLeft();\n}\n']
+	var wrong_options_list = [
+		'for(var i = 0; i = 4; i++) {\n    turnLeft();\n}\n',
+		'for var i = 0; i < 4; i++ \n    turnLeft();\n',
+		'for(var i = 0, i < 4, i++) {\n    turnLeft();\n}\n'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "Which of the following is the correct for loop syntax to make Karel turn left 4 times?");
+}
+
+async function questionWhatAreSuperKarelCommands() {
+	var correct_options_list = ['turnAround() and turnRight()']
+	var wrong_options_list = [
+		'turnLeft() and jump()',
+		'turnRight() and jump()',
+		'turnAround() and jump()'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "What commands does SuperKarel know that regular Karel does not?");
+}
+
+async function questionWhatIsCodeComment() {
+	var correct_options_list = ['A way to give notes to the reader to explain what your code is doing']
+	var wrong_options_list = [
+		'A way to teach Karel a new word',
+		'A message to your teacher in code',
+		'A place to write whatever you want in your code'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "What is a code comment?");
+}
+
+async function questionHowManyTimesShouldStartFunctionBeCalled() {
+	var correct_options_list = ['0']
+	var wrong_options_list = [
+		'1',
+		'2',
+		'However many you like'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "How many times should the start function be called in a program?");
+}
+
+async function questionHowManyTimesShouldStartFunctionBeDefined() {
+	var correct_options_list = ['1']
+	var wrong_options_list = [
+		'0',
+		'2',
+		'However many you like'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "How many times should the start function be defined in a program?");
+}
+
+async function questionSpinKarel() {
+	var correct_options_list = ['function spin() {\n    turnLeft();\n    turnLeft();\n    turnLeft();\n    turnLeft();\n}']
+	var wrong_options_list = [
+		'function spin() {\n    turnRight();\n}',
+		'function spin() {\n    turnLeft();\n    turnLeft();\n}',
+		'function spin() {\n    move();\n    move();\n    move();\n    move();\n}'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "Which function will teach Karel how to spin in a circle one time?");
+}
+
+async function questionHowManyTimesTurnRightDefined() {
+	var correct_options_list = ['Called 2 times, defined 1 time']
+	var wrong_options_list = [
+		'Called 3 times, defined 1 time',
+		'Called 1 time, defined 2 times',
+		'Called 2 time, defined 2 times',
+		'Called 1 time, defined 1 time'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "How many times is the turnRight function called and how many times is it defined?", "move();\nturnLeft();\nmove();\nturnRight();\nmove();\nturnRight();\n\nfunction turnRight() {\n   turnLeft();\n    turnLeft();\n    turnLeft();\n}\n");
+}
+
+async function questionPurposeOfLoop() {
+	var correct_options_list = ['To repeat something a fixed number of times']
+	var wrong_options_list = [
+		'To do something if a condition is true',
+		'To do something while a condition is true',
+		'To make programs run faster'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "What is the purpose of using a for loop in code?");
+}
+
+async function questionPostcondition() {
+	var correct_options_list = ['Karel ends one spot above a tennis ball facing East.']
+	var wrong_options_list = [
+		'Karel is on a spot with a tennis ball facing north',
+		'Karel is on the same position but on top of a ball.',
+		'Karel is facing East.'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "In the following code, what would be a good Postcondition to write?\n// Precondition: Karel is on a spot with a tennis ball facing East\n // Postcondition: ...", "function getOnTop() {\n    turnLeft();\n    move();\n    turnRight();\n}");
+}
+
+async function questionImproveProgram() {
+	var correct_options_list = ['Use a for loop to repeat the "move" command']
+	var wrong_options_list = [
+		'Break down this program into more functions',
+		'Use a while loop to repeat the "move" command',
+		'Fix the indentation of this program'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "How can we improve the following program?", "function start() {\n    move();\n    move();\n    move();\n    move();\n    move();\n    move();\n    move();\n    move();\n    move();\n}\n");
+}
+
+async function questionWhyTopDownDesign() {
+	var correct_options_list = ['Top down design is a way of designing your program by starting with the biggest problem and breaking it down into smaller and smaller pieces that are easier to solve.']
+	var wrong_options_list = [
+		'Top down design is a way that you can create designs on a computer to put on a web page',
+		'Top down design is a way of designing your programs starting with the individual commands first',
+		'Top down design is a way to use loops and if statements to decompose the problem'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "What is top down design?");
+}
+
+async function questionProgramWontRun() {
+	var correct_options_list = ['This code won’t run because of a syntax error']
+	var wrong_options_list = [
+		'Karel will end on Street 1, Avenue 2',
+		'Karel will end on Street 1, Avenue 7',
+		'Karel will crash into a wall'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "Karel starts at Street 1, Avenue 1, facing East in a 5x5 world. What will happen after this code runs?", "move();\nputball();\nmove();\nmove();\nmove();\nmove();\nmove();\n\n");
+}
+
+async function questionKarelCrashWall() {
+	var correct_options_list = ['Karel will crash into a wall']
+	var wrong_options_list = [
+		'Karel ends on street 1, avenue 3',
+		'Karel ends on street 2, avenue 3',
+		'This code won’t run because of a syntax error'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "Karel starts at Street 1, Avenue 1, facing East in a 5x5 world. What will happen after this code runs?", "move();\nmove();\nturnRight();\nmove();\n\n");
+}
+
+async function questionKarelPut300Balls() {
+	var correct_options_list = ['For loop']
+	var wrong_options_list = [
+		'If Statement',
+		'While Loop',
+		'Nested While Loop'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "Say you want to write a program to have Karel put down 300 tennis balls. Which control structure would you use?\n");
+}
+
+async function questionHowToTeachKarelNewCommands() {
+	var correct_options_list = ['Define a new function']
+	var wrong_options_list = [
+		'For loop',
+		'While loop',
+		'The start function'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "How can we teach Karel new commands?\n");
+}
+
+async function questionWhyIndentCode() {
+	var correct_options_list = ['All the above']
+	var wrong_options_list = [
+		'Helps show the structure of the code.',
+		'Easier for other people to understand.',
+		'A key part of good programming style!'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "What is the purpose of indentation?\n");
+}
+
+async function questionWhichConditionShouldBeUsed() {
+	var correct_options_list = ['ballsPresent()']
+	var wrong_options_list = [
+		'noBallsPresent()', 
+		'frontIsClear()',
+		'takeBall()'
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "What condition should be used in this while loop to get Karel to pick up all the tennis balls on the current location?", "while (________) {\n    takeBall();\n}\n");
+}
+
+async function questionHowManyBallsNow() {
+	var correct_options_list = ['1']
+	var wrong_options_list = ['0','2','3','4','6',]
+	await askQuestion(correct_options_list, wrong_options_list, "Say Karel is on a location with one tennis ball. After the following code runs, how many tennis balls will there be at that location?", "for (var i = 0; i < 3; i++) {\n    if (ballsPresent()) {\n        takeBall();\n    } else {\n        putBall();\n        putBall();\n    }\n}\n");
+}
+
+async function questionWhichIsACondition() {
+	var correct_options_list = ['frontIsClear()', 'frontIsBlocked()', 'ballsPresent()', 'noBallsPresent()', 'rightIsBlocked()', 'rightIsClear()', 'leftIsBlocked()', 'leftIsClear()', 'facingNorth()', 'notFacingNorth()', 'facingSouth()', 'notFacingSouth()', 'facingEast()', 'notFacingEast()', 'facingWest()', 'notFacingWest()']
+	var wrong_options_list = ['move()', 'putBall()', 'takeBall()', 'turnLeft()', 'turnRight()', 'turnAround()', 'paint()']
+	await askQuestion(correct_options_list, wrong_options_list, "Which of the following IS a Karel condition?");
+}
+
+async function questionWhichIsNotACondition() {
+	var correct_options_list = ['move()', 'putBall()', 'takeBall()', 'turnLeft()', 'turnRight()', 'turnAround()', 'paint()']
+	var wrong_options_list = ['frontIsClear()', 'frontIsBlocked()', 'ballsPresent()', 'noBallsPresent()', 'rightIsBlocked()', 'rightIsClear()', 'leftIsBlocked()', 'leftIsClear()', 'facingNorth()', 'notFacingNorth()', 'facingSouth()', 'notFacingSouth()', 'facingEast()', 'notFacingEast()', 'facingWest()', 'notFacingWest()']
+	await askQuestion(correct_options_list, wrong_options_list, "Which of the following is NOT a Karel condition?");
+}
+
+async function questionMysteryFunction() {
+	var correct_options_list = ['Karel moves until it is on a ball']
+	var wrong_options_list = [
+		'Karel moves once if there is no ball present', 
+		'Karel moves until it puts down a ball',
+		'Karel checks if there is no ball on the current spot and then moves once',
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "What does the mystery function do?", "function mystery() {\n    while (noBallsPresent()) {\n        move();\n    }\n}\n\n");
+}
+
+async function questionWhichIsAProperComment() {
+	var correct_options_list = ['// This is a comment']
+	var wrong_options_list = [
+		'/* This is a comment', 
+		'This is a comment',
+		'This is a comment()',
+	]	
+	await askQuestion(correct_options_list, wrong_options_list, "What is wrong with this for loop?", "for (var i = 0, i < 10, i + 1) {\n    move();\n}\n\nI. The for loop uses commas instead of semicolons\n\nII. It should say i++ instead of i + 1\n\n");
+}
+
+async function questionWhatsWrongWithForLoop() {
+	var correct_options_list = ['I and II']
+	var wrong_options_list = [
+		'I', 
+		'II',
+		'The for loop is correct',
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "What is wrong with this for loop?", "for (var i = 0, i < 10, i + 1) {\n    move();\n}\n\nI. The for loop uses commas instead of semicolons\n\nII. It should say i++ instead of i + 1\n\n");
+}
+
+async function questionTotalMoves() {
+	randomNumber = random(1,8);
+	var correct_options_list = [(randomNumber + 1).toString()]
+	var wrong_options_list = [(randomNumber + 2).toString(), (randomNumber + 0).toString(), (randomNumber -1).toString(),"1"]
+	await askQuestion(correct_options_list, wrong_options_list, "How many total times will Karel move in this program?", "function start() {\n    move();\n    for (var i = 0; i < "+randomNumber+"; i++) {\n        move();\n        putBall();\n    }\n}\n\n");
+}
+
+async function questionTwiceDefined() {
+	var correct_options_list = ['The go function has been defined twice']
+	var wrong_options_list = [
+		'The go function is called twice', 
+		'The go function has a syntax error',
+		'go is not a command that Karel understands',
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "What’s wrong with this code?", "function start() {\n    move();\n    go();\n    go();\n}\n\nfunction go() {\n    move();\n    move();\n}\n\nfunction go() {\n    move();\n    move();\n}\n");
+}
+
+async function questionDance() {
+	var correct_options_list = ['Called 3 times, defined 1 time']
+	var wrong_options_list = [
+		'Called 1 time, defined 1 time', 
+		'Called 1 time, defined 3 times',
+		'Called 3 times, defined 3 times',
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "In this code, how many times is the menari function called and how many times is it defined?", "function start() {\n    move();\n    menari();\n    move();\n    move();\n    turnLeft();\n    menari();\n    menari();\n}\nfunction menari() {\n    turnLeft();\n    move();\n    turnLeft();\n    move();\n}");
+}
+
+async function questionStairStep() {
+	var correct_options_list = ['Street 3, Avenue 3, Facing East']
+	var wrong_options_list = [
+		'Street 2, Avenue 2, Facing North', 
+		'Street 3, Avenue 3, Facing West',
+		'Street 4, Avenue 4, Facing East',
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "Karel starts at Street 1 and Avenue 1, facing East. After calling the stairStep function twice, where will Karel be and what direction will Karel be facing?", "function stairStep() {\n    move();\n    turnLeft();\n    move();\n    turnRight();\n}\n\n");
+}
+
+
+async function questionWhereKarelMoveTo() {
+	var correct_options_list = ['Street 1, Avenue 3, Facing North']
+	var wrong_options_list = [
+		'Street 1, Avenue 4, Facing North', 
+		'Street 1, Avenue 3, Facing South',
+		'Street 3, Avenue 1, Facing North',
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "Karel Dog start from Street 1 Avenue 1 (1,1). It move following this program:", "move();\nturnLeft();\nputBall();\nturnLeft();\nturnLeft();\nturnLeft(); \nmove();\nturnLeft();\n\nWhere is Karel Dog now?");
+}
+
+async function questionWhyDoWeUseFunction() {
+	var correct_options_list = ['all the above']
+	var wrong_options_list = ['break program down into smaller parts', 'avoid repeating code', 'make our program more readable']
+	await askQuestion(correct_options_list, wrong_options_list, "Why do we use functions?");
+}
+
+async function questionCorrectWayToWriteKarelTurnRightFunction() {
+	var correct_options_list = ['function turnRight() {\n    turnLeft();\n    turnLeft();\n    turnLeft();\n}']
+	var wrong_options_list = [
+		'function turnRight() {\n    turnRight();\n    turnRight();\n    turnRight();\n}', 
+		'function turnRight(); {\n    turnRight();\n    turnRight();\n    turnRight();\n}', 
+		'function turnRight() {\n    turnRight();\n    turnRight();\n    turnRight();\n}', 
+		'function turnRight {\n    turnRight();\n    turnRight();\n    turnRight();\n}', 
+		'turnRight function() {\n    turnRight();\n    turnRight();\n    turnRight();\n}', 
+		'function turnRight(); {\n    turnLeft();\n    turnLeft();\n    turnLeft();\n}', 
+		'function turnRight() {\n    turnLeft();\n    turnLeft();\n    turnLeft();\n}', 
+		'function turnRight {\n    turnLeft();\n    turnLeft();\n    turnLeft();\n}', 
+		'turnRight function() {\n    turnLeft();\n    turnLeft();\n    turnLeft();\n}', 
+		'function turnRight(); \n    turnLeft();\n    turnLeft();\n    turnLeft();', 
+		'function turnRight() \n    turnLeft();\n    turnLeft();\n    turnLeft();', 
+		'function turnRight \n    turnLeft();\n    turnLeft();\n    turnLeft();', 
+		'turnRight function() \n    turnLeft();\n    turnLeft();\n    turnLeft();', 
+	]
+	await askQuestion(correct_options_list, wrong_options_list, "How to write a correct turn right function?");
+}
+
+async function questionWhichIsCorrectCaptitalizationSyntax() {
+	var correct_options_list = ['putBall();', 'takeBall();', 'turnLeft();', 'turnRight();', 'turnAround();']
+	
+	// NOTE HERE WE DONT HAVE A PREBUILD wrong_options_list. WE HAVE TO SELECT A CORRECT ANSWER FIRST AND THEN BUILD THE wrong_options_list FROM THAT
+	//var wrong_options_list = ['frontIsClear', 'frontIsBlocked', 'ballsPresent', 'noBallsPresent', 'rightIsBlocked', 'rightIsClear', 'leftIsBlocked', 'leftIsClear', 'facingNorth', //'notFacingNorth', 'facingSouth', 'notFacingSouth', 'facingEast', 'notFacingEast', 'facingWest', 'notFacingWest']
+	
+	// Generate a random index within the range of the list length
+	const randomIndex = Math.floor(Math.random() * correct_options_list.length);
+	// Use the random index to select an item from the list
+	const selectedCorrectOption = correct_options_list[randomIndex];
+	const allWrongAnswers = [selectedCorrectOption.toLowerCase(), capitalizeFirstWord(selectedCorrectOption), selectedCorrectOption.toUpperCase()];
+	
+	correct_options_list = [selectedCorrectOption];
+	var wrong_options_list = allWrongAnswers;
+	
+	await askQuestion(correct_options_list, wrong_options_list,"Which of these is the correct syntax for a Karel command?");
+}
+
+async function questionWhichIsACommandSyntax() {
+	var correct_options_list = ['move', 'putBall', 'takeBall', 'turnLeft', 'turnRight', 'turnAround', 'paint']
+	
+	var wrong_options_list = ['frontIsClear', 'frontIsBlocked', 'ballsPresent', 'noBallsPresent', 'rightIsBlocked', 'rightIsClear', 'leftIsBlocked', 'leftIsClear', 'facingNorth', 'notFacingNorth', 'facingSouth', 'notFacingSouth', 'facingEast', 'notFacingEast', 'facingWest', 'notFacingWest']
+	
+	// Generate a random index within the range of the list length
+	const randomIndex = Math.floor(Math.random() * correct_options_list.length);
+
+	// Use the random index to select an item from the list
+	const correct_option = correct_options_list[randomIndex];
+	
+	// NOTE HERE WE NEED TO DO SOME ALTERATION TO THE ANSWERS AND THEN THROW IT BACK TO correct_options_list, and wrong_options_list
+	const allWrongOptions = [correct_option + "", correct_option + ";", correct_option + "()"];
+	const correctAnswer = correct_option + "();";
+	
+	correct_options_list = [correctAnswer];
+	wrong_options_list = allWrongOptions;
+	
+	await askQuestion(correct_options_list, wrong_options_list,"Which of these is the correct syntax for a Karel command?");
+}
+
+async function questionWhichIsACommand() {
+	var correct_options_list = ['move()', 'putBall()', 'takeBall()', 'turnLeft()', 'turnRight()', 'turnAround()', 'paint()']
+	var wrong_options_list = ['frontIsClear()', 'frontIsBlocked()', 'ballsPresent()', 'noBallsPresent()', 'rightIsBlocked()', 'rightIsClear()', 'leftIsBlocked()', 'leftIsClear()', 'facingNorth()', 'notFacingNorth()', 'facingSouth()', 'notFacingSouth()', 'facingEast()', 'notFacingEast()', 'facingWest()', 'notFacingWest()']
+	await askQuestion(correct_options_list, wrong_options_list,"Which of the following commands is a valid Karel command?");
+}
+
+/****************************************************************
+* 
+*                      SUPPORTING FUNCTIONS
+* 
+*****************************************************************/
+async function celebrate() {
+	// play audio file
+	const audio = new Audio('Electric_Dreams.mp3');
+	audio.loop = true;
+	audio.play();
+	
+	// DRAW VERTICAL LINE TO MEASURE PIXELS
+	//for (var i =0; i < 44; i ++) {
+	//	dot(0, i, random(1, 15));
+	//}
+
+	// decorate for fun
+	while (true) {
+		clear();
+		gravityfullscreen.style.height = "100vh";
+		putText("CONGRATULATIONS! YOU GOT A PERFECT SCORE!");
+		dot(random(0, 59), random(0, 44), random(1, 15));
+		dot(random(0, 59), random(0, 44), random(1, 15));
+		await delay(0.1);
+	}
+	
+	// while (true) {
+	// 	clear();
+	// 	// FIREWORKS
+	//	for (var i = 0; i < 40; i++) {
+	//		line(x1=30, y1=20, x2=random(0, 60), y2=random(0, 40), random(1, 15));
+	//	}
+	//	await delay(0.05);
+	//}
+}
+
+async function askStartOver() {
+	// DRAW HORIZONTAL LINE
+	// for (var i =0; i < 60; i ++) {
+	// 	dot(i + 0, 0, random(1, 15));
+	// }
+	showButtons("buttonYesNo");
+	gravityfullscreen.style.height = "100vh";
+	putText("THE END! DO YOU WANT TO START OVER? (y/n)");
+	var answerReload = await input("");
+	if (answerReload == "y" || buttonAnswer == "y") {
+		location.reload();
+	}
+	else {
+		home();
+		hidecursor();
+		clear();
+		putText("GOODBYE!");
+	}
+	showButtons("");
+}
+
+
+async function showResult(userAnswer, correctAnswer, allOptions) {
+	totalAttempts++; // INDICATE THE GLOBAL TOTAL QUESTIONS USER HAS ATTEMPTED
+	
+	const correctAnswerIndex = allOptions.indexOf(correctAnswer) + 1
+	
+	if (userAnswer == correctAnswerIndex) {
+		await println("\nYou are correct! :)", "left", true, "orange");
+		totalCorrectAnswers++; // INCREASE THE GLOBAL SCORE OF USER
+	}
+	else {
+		await println("\nIncorrect :(", "left", true, "red");
+	}
+	
+	showButtons("buttonNext");
+	
+	await println(`The correct answer is: ${correctAnswerIndex}\n`);
+	
+	await println(`SCORE: ${totalCorrectAnswers}/${totalAttempts} (${totalQuestions-totalAttempts} QUESTIONS LEFT)\n`, "left", true, "lime");	
+	
+	// IF COMPLETED ALL QUESTIONS
+	if (totalCorrectAnswers == totalQuestions) {
+		home();
+		hidecursor();
+		const inputBarElement = document.getElementById("inputbar");
+		inputBarElement.style.display = "none";
+		fullscreenUPDATE();
+		celebrate();
+	}
+}
+
+async function showQuestionAndAnswers(question, code, allOptions) {
+	// putText("Which of the following commands is a valid Karel command?", fontsize = 10, )
+	await println (`Q${totalAttempts+1}: ${question}`, "left", true, "default");
+	
+	if (code != "") await println (`${code}`, "left", true, "aqua");
+	
+	<!-- await allOptions.forEach((option, index) => { -->
+	  <!-- println(`${index + 1}. ${option}`, "left", true, "random"); -->
+	<!-- }); -->
+	
+	await println(`1. ${allOptions[0]}`, "left", true, "random");
+	await println(`2. ${allOptions[1]}`, "left", true, "random");
+	await println(`3. ${allOptions[2]}`, "left", true, "random");
+	await println(`4. ${allOptions[3]}`, "left", true, "random");
+	
+	await println("", "left", true, "white");
+}
+
+function getWrongAnswers(intNumberOfWrongAnswers, allWrongAnswers) {
+	// GET WRONG ANSWERS
+	// Create an array to store the randomly selected items
+	const selectedWrongAnswers = [];
+
+	// Number of items to select
+	const numberOfWrongAnswers = intNumberOfWrongAnswers;
+
+	// Randomly select items
+	while (selectedWrongAnswers.length < numberOfWrongAnswers) {
+		const randomIndex = Math.floor(Math.random() * allWrongAnswers.length);
+		const randomItem = allWrongAnswers[randomIndex];
+
+		// Ensure the selected item is not already in the selectedItems array
+		if (!selectedWrongAnswers.includes(randomItem)) {
+			selectedWrongAnswers.push(randomItem);
+		}
+	}
+
+	console.log("Randomly selected items: " + selectedWrongAnswers);
+	return selectedWrongAnswers;
+}
+
+
+function mixCorrectAnswerWithWrongAnswers(correctAnswer, selectedWrongAnswers) {	// MIX WITH CORRECT ANSWER
+	// Your correct item
+	const correctItem = correctAnswer;
+
+	// Your list of wrong answers
+	const wrongAnswers = selectedWrongAnswers;
+
+	// Combine the correct item and wrong answers into a single array
+	const allOptions = [correctItem, ...wrongAnswers];
+
+	// Shuffle the array to randomize the order
+	function shuffleArray(array) {
+		for (let i = array.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[array[i], array[j]] = [array[j], array[i]];
+		}
+	}
+	// Call shuffle array function
+	shuffleArray(allOptions);
+	
+	// return the shuffled array
+	return allOptions;
+}
+
+async function askQuestion(correct_options_list, wrong_options_list, question, code = "", iNumberOfWrongAnswersToGet = 3, prompt_message = "which is the correct answer?") {
+	// Generate a random index within the range of the list length
+	const randomIndex = Math.floor(Math.random() * correct_options_list.length);
+
+	// Use the random index to select an item from the list
+	const selectedCorrectOption = correct_options_list[randomIndex];
+
+	const numberOfWrongAnswersToGet = iNumberOfWrongAnswersToGet;
+	
+	const selectedWrongOptions = getWrongAnswers(numberOfWrongAnswersToGet, wrong_options_list);
+	
+	const correctAnswer = selectedCorrectOption;
+
+	const allOptions = mixCorrectAnswerWithWrongAnswers(correctAnswer, selectedWrongOptions);
+
+	await showQuestionAndAnswers(question, code, allOptions);
+
+	var userAnswer = await input(prompt_message);
+	
+	// GET FROM BUTTON ANSWER IF ANY. THEN CLEAR BUTTON ANSWER
+	if (buttonAnswer > 0) {
+		userAnswer = buttonAnswer;
+		buttonAnswer = -1;
+	}
+	
+	showResult(userAnswer, correctAnswer, allOptions);
+	
+	await input("");
+	
+	home();
+	
+	await delay(0.2);
+}
+
+function capitalizeFirstWord(str) {
+  // Check if the input string is not empty
+  if (str.length === 0) {
+    return str;
+  }
+
+  // Capitalize the first character and concatenate it with the rest of the string
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function random(min, max) {
+	// Generate a random number between 1 and 8 (inclusive of 1 but not 8)
+	var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+	return randomNumber;
+}
+</script>
+<script>
+	const inputElement = document.getElementById("input");
+	
+	inputElement.addEventListener("focus", function() {
+         document.body.focus();
+    });
+
+	inputElement.addEventListener("keydown", function(event) {
+		console.log (event.keyCode);
+	 	if (event.keyCode === 13) {
+	 		clearInput();
+	 	}
+	});
+	
+	function clearInput() {
+		inputElement.value = "";
+	}
+		
+	function setFocusInput() {
+	 	document.getElementById("input").focus();
+	}
+		
+	clearInput();
+	setFocusInput();
+</script>
+</body>
+</html>
