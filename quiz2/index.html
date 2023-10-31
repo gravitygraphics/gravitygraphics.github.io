@@ -104,7 +104,6 @@ async function start() {
 
 	// Call the functions in the shuffled order
 	for (const func of functionArray) {
-		showButtons("buttonNumbers");
 		await func();
 	}
 	
@@ -112,7 +111,6 @@ async function start() {
 	home();
 	//const inputBarElement = document.getElementById("inputbar");
 	//inputBarElement.style.display = "none";
-	showButtons("buttonNumbers");
 	fullscreenUPDATE();
 	askStartOver();
 }
@@ -638,7 +636,6 @@ async function askStartOver() {
 	// for (var i =0; i < 60; i ++) {
 	// 	dot(i + 0, 0, random(1, 15));
 	// }
-	showButtons("buttonYesNo");
 	gravityfullscreen.style.height = "100vh";
 	putText("THE END! DO YOU WANT TO START OVER? (y/n)");
 	var answerReload = await input("");
@@ -651,7 +648,6 @@ async function askStartOver() {
 		clear();
 		putText("GOODBYE!");
 	}
-	showButtons("");
 }
 
 
@@ -667,8 +663,6 @@ async function showResult(userAnswer, correctAnswer, allOptions) {
 	else {
 		await println("\nIncorrect :(", "left", true, "red");
 	}
-	
-	showButtons("buttonNext");
 	
 	await println(`The correct answer is: ${correctAnswerIndex}\n`);
 	
