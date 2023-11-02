@@ -14,11 +14,12 @@
 <body>
 	<div id="lesson1" class="lesson">
 		<h1>Lesson 1: The Screen</h1>
+
 		<p>The black area is the screen.</p>
 		<p>We are currently in Terminal Mode.</p>
 		<p>To print "Hello World", type in the code below in the blue box labeled <b>"YOUR CODE"</b> and click on the <b>"RUN YOUR CODE"</b> button.</p>
 		<pre>print ("Hello World")</pre>
-		
+
 		<h3></h3>
 		<div id="buttons">
 			<!--button class="buttonPreviousLesson" onclick="window.location.replace('lesson2.html');">Lesson 0</button-->
@@ -27,10 +28,13 @@
 	</div>
 
 	<textarea id="LessonRunCode">
-	</textarea>
-	<textarea id="LessonExampleCode">print('Hello World')
-	</textarea>
+
+</textarea>
+	<textarea id="LessonExampleCode">
+
+</textarea>
 	<script>
+		parent.ShowExample();
 		parent.LoadYourCode("TextAreaYourCode", "Lesson1");
 		parent.HideHelper();
 		parent.HideHelperButton();
